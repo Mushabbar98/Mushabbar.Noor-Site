@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>80 N Small-Scale Turbojet — Case Study</title>
+<meta name="description" content="Full-cycle thermodynamic and CFD/structural design of a small-scale centrifugal-compressor turbojet engine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-brand"><span class="dot"></span>MHN.ENG</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="consultancy.html">Consultancy</a>
+        <a href="experience.html">Experience</a>
+        <a href="insights.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="contact.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="index.html">Home</a> / <a href="projects.html">Projects</a> / Small-Scale Turbojet</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Independent project</div>
+    <h1>80 N Small-Scale Turbojet Engine</h1>
+    <p class="lede" style="max-width:62ch;margin-top:16px;">Full-cycle design of a centrifugal-compressor turbojet targeting ~80 N thrust around a 65 mm rotor at ~120,000 RPM — from thermodynamic cycle analysis through CFD and structural/modal validation.</p>
+  </div>
+  <div class="wrap">
+    <div class="titleblock reveal in">
+      <div class="cell"><div class="k">Target thrust</div><div class="v">~80 N</div></div>
+      <div class="cell"><div class="k">Compressor</div><div class="v">65 mm centrifugal</div></div>
+      <div class="cell"><div class="k">Design speed</div><div class="v">~120,000 RPM</div></div>
+      <div class="cell"><div class="k">Tools</div><div class="v">Vista TF · BladeGen · CFX</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section" style="padding-top:56px;">
+    <div class="prose reveal in">
+      <h2>Why centrifugal over axial</h2>
+      <p>At this scale, blade heights on an axial compressor stage shrink to the point where tip-clearance losses dominate the efficiency budget — the clearance gap stops being a small correction and starts being a large fraction of blade span. A single-stage centrifugal compressor sidesteps that penalty and is the better choice below a certain size threshold; the selection here was made on quantitative tip-clearance-loss grounds rather than convention.</p>
+      <h2>Design workflow</h2>
+      <p>The engine was designed cycle-first: a full thermodynamic cycle analysis set the pressure ratio, mass flow and turbine inlet temperature targets needed to hit 80 N thrust. From there, meanline design in Vista TF sized the compressor and turbine stages, and BladeGen generated the 3D blade geometry consistent with that meanline solution.</p>
+      <p>Geometry moved into TurboGrid for structured turbomachinery meshing, then into the CFX / CFD-Post pipeline for full 3D flow solution and post-processing of the rotor and stator passages. The resulting flow-field and pressure loading fed a Static Structural and modal analysis pass to check the rotor against resonance and aeroelastic response at operating speed.</p>
+    </div>
+
+    <div class="figure reveal" style="margin-top:40px;">
+      <img src="assets/img/render-turbojet.webp" alt="CFD velocity contour on the centrifugal compressor rotor blades of the turbojet">
+      <figcaption>Velocity contour on the compressor rotor blade row at design speed — CFX solution, post-processed in CFD-Post.</figcaption>
+    </div>
+
+    <div class="metrics reveal" style="margin-top:40px;">
+      <div class="m"><div class="v">Cycle → CAD</div><div class="l">full design chain, no off-the-shelf stage</div></div>
+      <div class="m"><div class="v">Meanline</div><div class="l">Vista TF stage sizing</div></div>
+      <div class="m"><div class="v">3D CFD</div><div class="l">TurboGrid mesh + CFX solve</div></div>
+      <div class="m"><div class="v">Modal</div><div class="l">Static Structural aeroelastic check</div></div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:40px;">
+      <p>Outcome: a complete, independently executed turbomachinery design chain — thermodynamic cycle through blade geometry, CFD, and structural/modal validation — demonstrating the same workflow used on certified industrial turbomachinery, applied end-to-end on a self-directed project.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet tint">
+  <div class="wrap section" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div><div class="eyebrow">Next case study</div><h2 style="font-size:1.4rem;margin:0;">Ground Vehicle Aerodynamic Benchmark</h2></div>
+    <a href="project-ground-vehicle.html" class="btn primary">View project →</a>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">MHN.ENG</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor — Aerodynamics &amp; Multiphysics Engineer. CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems, from Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="research.html">Research</a>
+          <a href="projects.html">Projects</a>
+          <a href="experience.html">Experience</a>
+          <a href="insights.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="consultancy.html">Consultancy</a>
+          <a href="contact.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · MHN.ENG</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>

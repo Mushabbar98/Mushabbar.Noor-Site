@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ground Vehicle Aerodynamic Benchmark — Case Study</title>
+<meta name="description" content="CFD benchmark of a streamlined bluff body in ground proximity, validated against DrivAer and Morelli references, with adjoint-based shape optimization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-brand"><span class="dot"></span>MHN.ENG</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="consultancy.html">Consultancy</a>
+        <a href="experience.html">Experience</a>
+        <a href="insights.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="contact.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="index.html">Home</a> / <a href="projects.html">Projects</a> / Ground Vehicle CFD</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Independent study</div>
+    <h1>Ground Vehicle Aerodynamic Benchmark</h1>
+    <p class="lede" style="max-width:62ch;margin-top:16px;">High-speed CFD study of a smooth, streamlined bluff body in close ground proximity, benchmarked against published minimum-drag references and pushed further with adjoint-based shape optimization.</p>
+  </div>
+  <div class="wrap">
+    <div class="titleblock reveal in">
+      <div class="cell"><div class="k">Inlet speed</div><div class="v">300 km/h</div></div>
+      <div class="cell"><div class="k">Turbulence model</div><div class="v">k-ω SST</div></div>
+      <div class="cell"><div class="k">Mesh</div><div class="v">Polyhedral, ground proximity</div></div>
+      <div class="cell"><div class="k">Solver</div><div class="v">Ansys Fluent</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section" style="padding-top:56px;">
+    <div class="prose reveal in">
+      <h2>Approach</h2>
+      <p>A smooth, streamlined bluff body was simulated in close ground proximity at 300 km/h inlet velocity in Ansys Fluent, using a k-ω SST turbulence closure and a polyhedral mesh refined around the body surface and the ground-clearance gap, where the flow is most sensitive to mesh quality.</p>
+      <p>Rather than treat the result in isolation, I benchmarked it against three published references with well-characterized aerodynamic behaviour: the Morelli minimum-drag body, the DrivAer generic sedan geometry, and simplified teardrop analogs — giving the result a defensible position against known low-drag and automotive-realistic baselines rather than an unanchored number.</p>
+      <h2>Going further: adjoint optimization</h2>
+      <p>To explore how much more performance was available, I ran an adjoint-based shape optimization study in Fluent targeting zero lift, using free-form deformation (FFD) parameterization of the surface. Adjoint methods compute the sensitivity of an objective (here, lift) to every surface mesh point in a single additional solve, making them far cheaper than parametric sweeps for high-dimensional shape studies.</p>
+    </div>
+
+    <div class="metrics reveal" style="margin-top:40px;">
+      <div class="m"><div class="v">Cd ≈ 0.079</div><div class="l">predicted drag coefficient</div></div>
+      <div class="m"><div class="v">CL ≈ -0.117 to -0.192</div><div class="l">lift coefficient range</div></div>
+      <div class="m"><div class="v">3</div><div class="l">reference geometries benchmarked against</div></div>
+      <div class="m"><div class="v">FFD</div><div class="l">adjoint shape optimization for zero lift</div></div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:40px;">
+      <p>Outcome: a fully benchmarked low-drag CFD result with a credible position against DrivAer and Morelli-class references, plus a demonstrated adjoint optimization workflow — directly transferable to automotive, motorsport, and open-wheel aerodynamic development work.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet tint">
+  <div class="wrap section" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div><div class="eyebrow">Next case study</div><h2 style="font-size:1.4rem;margin:0;">2 kg Acrobatic UAV Digital Twin</h2></div>
+    <a href="project-digital-twin.html" class="btn primary">View project →</a>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">MHN.ENG</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor — Aerodynamics &amp; Multiphysics Engineer. CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems, from Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="research.html">Research</a>
+          <a href="projects.html">Projects</a>
+          <a href="experience.html">Experience</a>
+          <a href="insights.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="consultancy.html">Consultancy</a>
+          <a href="contact.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · MHN.ENG</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="omelette-print-source" content="v1786773062410604 About.dc.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="./doc-page.js"></script>
+<style>
+doc-page:not(:defined){ visibility:hidden; }
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+* { animation-delay: -99s !important; animation-duration: .001s !important;
+    animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+    animation-play-state: running !important; transition-duration: 0s !important; }
+.pp-figure{ border:1px solid var(--line); background:#fff; break-inside:avoid; }
+.pp-figure img{ width:100%; display:block; }
+.pp-figure figcaption{ padding:10px 14px; font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--ink-faint); border-top:1px solid var(--line); }
+.pp-toolgrid{ display:grid; grid-template-columns:repeat(2,1fr); border:1px solid var(--line); break-inside:avoid; margin-bottom:1.4em; }
+.pp-toolcol{ padding:16px 18px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+.pp-toolcol .h{ font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:8px; }
+.pp-toolcol li{ font-size:.86rem; padding:3px 0; color:var(--ink-soft); }
+</style>
+</helmet>
+<doc-page margin="0.7in">
+  <div class="kicker" style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:10px;">About</div>
+  <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.8rem;margin:0 0 .5em;">From avionics thermal qualification to full-vehicle aerodynamics.</h1>
+
+  <figure class="pp-figure">
+    <img src="assets/img/portrait-museum.jpg" alt="Mushabbar Husnain Noor at the Turkish Aeronautical Association museum">
+    <figcaption>Turkish Aeronautical Association Museum, Ankara</figcaption>
+  </figure>
+
+  <p>I'm a Mechanical Engineer (Air University, Islamabad) whose whole career has run along one axis: how physics, airflow, heat, structural load, decides whether a piece of hardware actually works in the field. That started with cooling avionics boxes bolted into fighter aircraft bays, and has grown into CFD and fluid-structure interaction work on unmanned aircraft, small-scale turbomachinery, and ground vehicles.</p>
+  <p>I currently work as an Aerodynamics Engineer at <strong>Baykar Technologies</strong>, across Pakistan and Türkiye, where I run CFD on UAV airframes and propeller engines, conduct FSI-based aeroelastic flutter analysis, build VN-diagrams and flight envelopes, and support hardware-in-the-loop (HILS) development with aerodynamic parameters.</p>
+  <p>Before that, I led aerothermal research at Shocks &amp; Stars Engineering and at Air University's AEROFLUX Lab, qualifying avionics LRUs under MIL-STD/MIL-E-5400, running hypersonic scramjet and plasma-arc thruster analysis, and securing government research grants from SPRC along the way.</p>
+
+  <figure class="pp-figure">
+    <img src="assets/img/scramjet-presentation.jpeg" alt="Presenting scramjet engine CFD results at Air University">
+    <figcaption>Presenting scramjet engine CFD results, AEROFLUX Lab, Air University</figcaption>
+  </figure>
+
+  <h2>How I work</h2>
+  <p>I default to first-principles analysis backed by CFD/FEA, not the other way around, a simulation is only as good as the physical reasoning that set it up. I build defensible, quantified answers: a flutter boundary, a thermal margin against a MIL standard, a Cd number with a benchmark to compare it against. Where a project calls for it, I build the surrounding tooling too, digital twins, MATLAB/Python pipelines, response-surface DoE, rather than treating simulation as a one-off exercise.</p>
+
+  <h2>Where this is headed</h2>
+  <p>My longer-term interest is in physics-informed neural networks, reduced-order models, and digital twin frameworks, using machine learning to compress expensive CFD/FSI campaigns into fast, trustworthy surrogates, without losing the physical grounding that makes the results usable in an engineering decision.</p>
+
+  <h2 style="break-before:page;">Education &amp; certification</h2>
+  <div class="pp-toolgrid">
+    <div class="pp-toolcol"><div class="h">Education</div><li>BS Mechanical Engineering</li><li>Air University, Islamabad</li><li>Sep 2017 to Jan 2022</li></div>
+    <div class="pp-toolcol"><div class="h">Certifications</div><li>Certified Aerodynamics Engineer, Baykar Technologies</li><li>Pakistan Engineering Council (PEC) Certified Engineer</li></div>
+    <div class="pp-toolcol"><div class="h">Recognition</div><li>Winner, Air CAD Competition, Airtech '19</li><li>Honorable Judge, CAD Mania, Air University</li><li>PEEF Scholarship, 2017–2021</li></div>
+    <div class="pp-toolcol"><div class="h">Languages</div><li>English, fluent</li><li>Urdu, native</li></div>
+  </div>
+
+  <h2>Software &amp; tools</h2>
+  <div class="pp-toolgrid">
+    <div class="pp-toolcol"><div class="h">CAD</div><li>SOLIDWORKS</li></div>
+    <div class="pp-toolcol"><div class="h">CFD / FEA</div><li>ANSYS Fluent</li><li>ANSYS ICEM CFD</li><li>ANSYS Static Structural</li><li>ANSYS Thermal</li><li>COMSOL Multiphysics</li><li>Pointwise</li></div>
+    <div class="pp-toolcol"><div class="h">Scripting &amp; analysis</div><li>MATLAB</li><li>Python (data pipelines, basic ML)</li></div>
+    <div class="pp-toolcol"><div class="h">Prototyping</div><li>Laser &amp; wire cutting</li><li>CNC lathe &amp; mill</li><li>3D printing</li></div>
+  </div>
+
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--ink-faint);margin-top:2em;">Mushabbar.Noor · Mushabbar Husnain Noor · mushabbarhn@gmail.com · Rawalpindi, Pakistan</p>
+</doc-page>
+
+</x-dc>
+</body>
+</html>

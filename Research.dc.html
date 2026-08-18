@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</helmet>
+  <header class="nav">
+    <div class="wrap">
+      <a href="Home.dc.html" class="nav-brand"><span class="dot"></span>Mushabbar.Noor</a>
+      <nav class="nav-links">
+        <a href="Home.dc.html">Home</a>
+        <a href="About.dc.html">About</a>
+        <a href="Research.dc.html" class="active">Research</a>
+        <a href="Projects.dc.html">Projects</a>
+        <a href="Consultancy.dc.html">Consultancy</a>
+        <a href="Insights.dc.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="Contact.dc.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="Home.dc.html">Home</a> / Research</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Research</div>
+    <h1>Peer-reviewed aerothermal methods, and open questions in surrogate modeling.</h1>
+    <p class="lede" style="max-width:60ch;margin-top:16px;">Two published methods for qualifying avionics thermal design, three funded research programmes, and an ongoing interest in making expensive CFD and FSI campaigns cheap enough to query in a design loop.</p>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section" style="padding-top:0;">
+    <div class="section-head">
+      <div><div class="eyebrow">Publications</div><h2>Peer-reviewed work</h2></div>
+    </div>
+
+    <div class="pub">
+      <div class="year mono">2024</div>
+      <div>
+        <div class="venue">ICASET 2023 · Springer, Singapore</div>
+        <h3>A Minimal Input Dimensionless Empirical-Corrector (MIDEC) Method for Aerothermal Analysis of Airborne Electronics</h3>
+        <p>Proceedings of the First International Conference on Aeronautical Sciences, Engineering and Technology. Introduces a dimensionless empirical-corrector method that reduces the input burden of aerothermal LRU analysis while retaining accuracy across the flight envelope, aimed at qualification workflows where full CFD sweeps for every altitude/Mach/duty-cycle combination are impractical.</p>
+        <div class="btn-row">
+          <a class="btn teal" href="https://doi.org/10.1007/978-981-99-7775-8_20" target="_blank" rel="noopener">View on Springer (DOI)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="year mono">2022</div>
+      <div>
+        <div class="venue">IBCAST 2022 · IEEE</div>
+        <h3>A Figure of Merit Based Computational Heat Transfer Method for Aerothermal Analysis of Airborne Electronics System LRU</h3>
+        <p>19th International Bhurban Conference on Applied Sciences and Technology (IBCAST), Islamabad, pp. 70–75. Proposes a figure-of-merit based computational heat transfer method for evaluating avionics LRU cooling designs, developed and validated against AEROFLUX programme test data.</p>
+        <div class="btn-row">
+          <a class="btn teal" href="https://doi.org/10.1109/IBCAST54850.2022.9990189" target="_blank" rel="noopener">View on IEEE Xplore (DOI)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet tint">
+  <div class="wrap section">
+    <div class="section-head">
+      <div><div class="eyebrow">Grants &amp; affiliations</div><h2>Funded research programmes</h2></div>
+    </div>
+    <div class="metrics">
+      <div class="m"><div class="v">PKR 1.5M</div><div class="l">SPRC, AEROFLUX I, Grant# C02SDM5N-0KAIL-0TSO0057-220404</div></div>
+      <div class="m"><div class="v">PKR 2.5M</div><div class="l">SPRC, AEROFLUX II, Grant# CO2SDM5N-OOSAT-OTSO2638-21084</div></div>
+      <div class="m"><div class="v">PKR 1.5M</div><div class="l">SPRC, AEROFLUX III, Grant# C02SDM5N-00SAT-0TSO1234-220605</div></div>
+      <div class="m"><div class="v">PKR 0.5M</div><div class="l">Government of Pakistan, Agreement No. 083/RAC-IX/AU/2022</div></div>
+    </div>
+    <p style="margin-top:20px;">All three AEROFLUX programmes (Air University and Shocks &amp; Stars Engineering, 2020–present) targeted qualification of airborne electronics LRUs under MIL-STD/MIL-E-5400, for Pakistan Air Force's Airworthiness Certification Authority, across conditioned and unconditioned aircraft bays.</p>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section">
+    <div class="section-head">
+      <div><div class="eyebrow">Current interests</div><h2>Current interests</h2></div>
+      <p class="desc">Open to collaboration, co-authorship, or a PhD and research-assistant conversation in any of these directions.</p>
+    </div>
+    <div class="card-grid">
+      <div class="pcard"><div class="body">
+        <div class="tags"><span class="tag">PINNs</span></div>
+        <h3>Physics-informed neural networks</h3>
+        <p>Embedding governing PDEs directly into network training for aerothermal and aerodynamic problems, to cut solver dependence without losing physical fidelity.</p>
+      </div></div>
+      <div class="pcard"><div class="body">
+        <div class="tags"><span class="tag">ROMs</span></div>
+        <h3>Reduced-order modeling</h3>
+        <p>Building fast surrogates from high-fidelity CFD and FSI datasets using proper orthogonal decomposition and related methods, for real-time or many-query design work.</p>
+      </div></div>
+      <div class="pcard"><div class="body">
+        <div class="tags"><span class="tag">Digital twins</span></div>
+        <h3>UAV digital twin frameworks</h3>
+        <p>Coupling telemetry, low-fidelity physics and simulation-informed correction into a live model of an aircraft in operation. There is a working build of this under Projects.</p>
+      </div></div>
+      <div class="pcard"><div class="body">
+        <div class="tags"><span class="tag">HPC</span></div>
+        <h3>High-speed and hypersonic computational fluid dynamics</h3>
+        <p>Compressible, shock-capturing CFD for transonic and supersonic flows, where standard incompressible solvers and mesh strategies stop being reliable.</p>
+      </div></div>
+    </div>
+    <div class="btn-row" style="margin-top:36px;">
+      <a href="Contact.dc.html" class="btn primary">Discuss a collaboration</a>
+      <a href="Projects.dc.html" class="btn">See applied projects</a>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Mushabbar.Noor</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor. Aerodynamics and multiphysics engineering: CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems. Based in Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="Research.dc.html">Research</a>
+          <a href="Projects.dc.html">Projects</a>
+            <a href="Insights.dc.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="Consultancy.dc.html">Consultancy</a>
+          <a href="Contact.dc.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · Mushabbar.Noor</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+
+</x-dc>
+</body>
+</html>

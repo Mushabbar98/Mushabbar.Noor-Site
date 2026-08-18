@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</helmet>
+  <header class="nav">
+    <div class="wrap">
+      <a href="Home.dc.html" class="nav-brand"><span class="dot"></span>Mushabbar.Noor</a>
+      <nav class="nav-links">
+        <a href="Home.dc.html">Home</a>
+        <a href="About.dc.html">About</a>
+        <a href="Research.dc.html">Research</a>
+        <a href="Projects.dc.html" class="active">Projects</a>
+        <a href="Consultancy.dc.html">Consultancy</a>
+        <a href="Insights.dc.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="Contact.dc.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+
+<div class="wrap breadcrumb"><a href="Home.dc.html">Home</a> / <a href="Projects.dc.html">Projects</a> / Scramjet Combustion Analysis</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Research · Hypersonics · AeroFlux Lab, Air University</div>
+    <h1>High-Speed Combustion Analysis of a Scramjet Engine</h1>
+    <p class="lede" style="max-width:62ch;margin-top:16px;">Computational thermo-fluid analysis of a supersonic-combustion ramjet engine for a hypersonic suborbital vehicle, verifying a MATLAB engine model and comparing two combustion-chamber configurations.</p>
+  </div>
+  <div class="wrap">
+    <div class="titleblock">
+      <div class="cell"><div class="k">Vehicle</div><div class="v">Hypersonic suborbital</div></div>
+      <div class="cell"><div class="k">Configurations</div><div class="v">Constant-area vs variable-area</div></div>
+      <div class="cell"><div class="k">Fuel injection</div><div class="v">Hydrogen, 45° injector angle</div></div>
+      <div class="cell"><div class="k">Tools</div><div class="v">Ansys Fluent · MATLAB</div></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="case-stats">
+      <div class="m"><div class="v">2</div><div class="l">combustion-chamber configurations compared</div></div>
+      <div class="m"><div class="v">45°</div><div class="l">fuel-injector angle, held constant across both</div></div>
+      <div class="m"><div class="v">6</div><div class="l">Mach zones resolved across the engine</div></div>
+      <div class="m"><div class="v">MATLAB cross-check</div><div class="l">CFD verified against the engine parameter model</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section" style="padding-top:56px;">
+    <div class="case-row">
+      <div class="tag">Objective</div>
+      <div>
+        <h2>Objective</h2>
+        <p>Computational thermo-fluid analysis of a scramjet engine for a hypersonic suborbital vehicle, run to verify the engine parameters developed in a MATLAB model and to analyze shock behaviour and plume shape. Two combustion-chamber configurations were investigated: a constant-area chamber (pressure gain) and a variable-area chamber (constant pressure), with the flame holder and fuel composition held identical across both for a fair comparison.</p>
+        <div class="figure-pair" style="margin-top:28px;">
+          <figure class="figure">
+            <img src="assets/img/scramjet-chamber-geometry.png" alt="Scramjet engine flow-domain geometry, inlet through combustion chamber to nozzle">
+            <figcaption>Flow-domain geometry: inlet, isolator, combustion chamber and nozzle.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/img/scramjet-variable-area-config.png" alt="Variable-area combustion chamber configuration highlighted in the flow domain">
+            <figcaption>Variable-area (constant-pressure) combustion-chamber configuration.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="case-row">
+      <div class="tag">Flow field</div>
+      <div>
+        <h2>Mach contours and plume</h2>
+        <p>The Mach contours show distinct flow characteristics across the engine's flow-zone regions, from inlet compression through to the exhaust. The plume is clearly visible in the stern region of the scramjet, and the flow is decelerated from a supersonic freestream to the regime needed for combustion before reaching the chamber.</p>
+        <div class="figure" style="margin-top:28px;">
+          <img src="assets/img/scramjet-mach-contour.png" alt="Mach number contour across the complete scramjet engine showing shock and expansion structure">
+          <figcaption>Mach-number contour across the complete engine: inlet shock train, combustion zone and exhaust plume.</figcaption>
+        </div>
+      </div>
+    </div>
+    <div class="case-row">
+      <div class="tag">Combustion</div>
+      <div>
+        <h2>Combustion chamber and flame holder</h2>
+        <p>Both configurations were evaluated on hydrogen-fuel burning species. In the variable-area configuration, water vapor mixes across the complete downstream domain; in the constant-area configuration, the water-vapor stream is squeezed against the chamber wall by the pressure rise further downstream. A streamline plot of the flame holder shows the circulation zone where the air-fuel mixture recirculates, holding the combustion flame and resolving the residence-time problem in the scramjet's combustion chamber. Flame-holder dimensions are set by the fuel-injector angle, here 45°.</p>
+        <div class="figure-pair" style="margin-top:28px;">
+          <figure class="figure">
+            <img src="assets/img/scramjet-h2o-variable-area.jpg" alt="H2O mass-fraction contour along the variable-area combustion chamber">
+            <figcaption>H2O mass-fraction contour: mixing spreads across the full downstream domain (variable area).</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/img/scramjet-o2-constant-area.jpg" alt="O2 mass-fraction contour showing near-wall concentration in the constant-area combustion chamber">
+            <figcaption>O2 mass-fraction contour: concentration stays squeezed near the wall (constant area).</figcaption>
+          </figure>
+        </div>
+        <div class="figure" style="margin-top:22px;">
+          <img src="assets/img/scramjet-flameholder-circulation.png" alt="Velocity streamlines showing the recirculation zone behind the flame holder">
+          <figcaption>Flame-holder circulation zone: recirculating air-fuel mixture holds the flame and sets residence time.</figcaption>
+        </div>
+      </div>
+    </div>
+
+    <div class="outcome-card" style="margin-top:36px;">
+      <span class="tag">Outcome</span>
+      <p>A verified CFD model of a supersonic-combustion ramjet engine, cross-checked against a MATLAB engine-parameter model, with a quantified comparison between constant-area and variable-area combustion chambers on flow and combustion behaviour. Sponsored by ORIC, Air University, and the Government of Pakistan.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet tint">
+  <div class="wrap section" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div><div class="eyebrow">Next case study</div><h2 style="font-size:1.4rem;margin:0;">AEROFLUX III: Controlled Bay</h2></div>
+    <a href="Project-AeroFlux-III.dc.html" class="btn primary">View project</a>
+  </div>
+</section>
+
+  <div id="lightbox"><img alt=""></div>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Mushabbar.Noor</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor. Aerodynamics and multiphysics engineering: CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems. Based in Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="Research.dc.html">Research</a>
+          <a href="Projects.dc.html">Projects</a>
+          <a href="Insights.dc.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="Consultancy.dc.html">Consultancy</a>
+          <a href="Contact.dc.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · Mushabbar.Noor</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+
+</x-dc>
+</body>
+</html>

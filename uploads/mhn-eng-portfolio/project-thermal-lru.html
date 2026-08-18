@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avionics LRU Thermal Qualification — Case Study</title>
+<meta name="description" content="MIL-E-5400 aerothermal qualification of avionics LRUs across the AEROFLUX I, II and III programmes, with CFD and DoE-based analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-brand"><span class="dot"></span>MHN.ENG</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="consultancy.html">Consultancy</a>
+        <a href="experience.html">Experience</a>
+        <a href="insights.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="contact.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="index.html">Home</a> / <a href="projects.html">Projects</a> / Avionics LRU Thermal Qualification</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Research + industrial · AEROFLUX I, II, III</div>
+    <h1>Avionics LRU Thermal Qualification Under MIL-E-5400</h1>
+    <p class="lede" style="max-width:62ch;margin-top:16px;">Three funded programmes (2020–present) qualifying airborne electronics LRUs mounted in conditioned and unconditioned aircraft bays, across altitude, Mach number, duty cycle, and engine bleed-flow settings.</p>
+  </div>
+  <div class="wrap">
+    <div class="titleblock reveal in">
+      <div class="cell"><div class="k">Standard</div><div class="v">MIL-E-5400 / MIL-STD-5400</div></div>
+      <div class="cell"><div class="k">Altitude range</div><div class="v">30,000 – 50,000 ft</div></div>
+      <div class="cell"><div class="k">Grants</div><div class="v">SPRC + NESCOM, PKR 5.5M+</div></div>
+      <div class="cell"><div class="k">Tools</div><div class="v">Fluent · MATLAB</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section" style="padding-top:56px;">
+    <div class="prose reveal in">
+      <h2>Problem</h2>
+      <p>Line-replaceable units (LRUs) — the electronics boxes that get swapped in and out of an aircraft — have to keep their internal components within safe thermal limits across the aircraft's entire operating envelope: every altitude, Mach number, bay type (conditioned or unconditioned), and engine bleed-air setting. Pakistan Air Force's Airworthiness Certification Authority requires that thermal design be qualified against MIL-E-5400 before an LRU is cleared for a platform.</p>
+      <h2>Method</h2>
+      <p>Across the three AEROFLUX programmes, I ran both analytical and computational (Ansys Fluent) aerothermal analysis of LRUs in conditioned and unconditioned bays, at 30% and 100% duty cycle, for the full Mach/altitude combinations relevant to each platform, under ISA and user-defined atmospheric conditions. Where full CFD sweeps across the whole flight envelope were impractical, I applied a response-surface based design-of-experiment (DoE) method, then built a high-fidelity MATLAB algorithm using the DoE-generated data to predict temperature across the complete flight regime without re-running CFD for every point — the basis for the MIDEC method later published at ICASET/Springer.</p>
+      <p>Every computational result was validated against environmental thermal-chamber test data before being used to qualify the design.</p>
+    </div>
+
+    <div class="figure reveal" style="margin-top:40px;">
+      <img src="assets/img/slide-project01.png" alt="CFD results summary slide: transient temperature plot, MIL-E-5400 compliance and engine bleed comparison">
+      <figcaption>AEROFLUX III results summary — transient thermal response and engine-bleed sensitivity, compiled for MIL-E-5400 compliance reporting.</figcaption>
+    </div>
+
+    <div class="figure-pair reveal" style="margin-top:24px;">
+      <figure class="figure">
+        <img src="assets/img/contour-finarray.png" alt="ANSYS Fluent temperature contour of a finned LRU cold-plate array">
+        <figcaption>Temperature contour across a finned LRU array — Ansys Fluent R19.2, steady-state solution at cruise conditions.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/img/chart-transient-temp.png" alt="Transient temperature plot showing surface and exit temperature approaching steady state over 2500 seconds">
+        <figcaption>Transient response at 50,000 ft: surface temperature reaches thermal equilibrium after ~2,500 s (41.6 min) of continuous operation.</figcaption>
+      </figure>
+    </div>
+
+    <div class="metrics reveal" style="margin-top:40px;">
+      <div class="m"><div class="v">302 / 314 / 330 K</div><div class="l">max temperature at 30k / 40k / 50k ft</div></div>
+      <div class="m"><div class="v">2,500 s</div><div class="l">to thermal equilibrium at 50,000 ft</div></div>
+      <div class="m"><div class="v">1% bleed</div><div class="l">identified as most thermally critical setting</div></div>
+      <div class="m"><div class="v">Full compliance</div><div class="l">confirmed against MIL-E-5400</div></div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:40px;">
+      <p>Outcome: thermal designs for three LRU generations qualified under MIL-E-5400 for PAF's Airworthiness Certification Authority, with the underlying response-surface method later formalized and published (see Research). The most thermally critical condition — slow-speed, high-altitude flight at 1% engine bleed — was identified and used to set design margins.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet tint">
+  <div class="wrap section" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div><div class="eyebrow">See the method published</div><h2 style="font-size:1.4rem;margin:0;">MIDEC Method — ICASET / Springer, 2024</h2></div>
+    <a href="research.html" class="btn primary">View publication →</a>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">MHN.ENG</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor — Aerodynamics &amp; Multiphysics Engineer. CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems, from Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="research.html">Research</a>
+          <a href="projects.html">Projects</a>
+          <a href="experience.html">Experience</a>
+          <a href="insights.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="consultancy.html">Consultancy</a>
+          <a href="contact.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · MHN.ENG</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>

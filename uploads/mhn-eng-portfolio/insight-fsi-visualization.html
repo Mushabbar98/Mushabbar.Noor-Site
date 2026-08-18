@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visualizing 2-Way FSI Results in CFD-Post</title>
+<meta name="description" content="A practical workflow for combining linked Fluent and Mechanical FSI solutions in CFD-Post so flow and structural deformation tell one coupled story.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-brand"><span class="dot"></span>MHN.ENG</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="consultancy.html">Consultancy</a>
+        <a href="experience.html">Experience</a>
+        <a href="insights.html" class="active">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="contact.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="index.html">Home</a> / <a href="insights.html">Insights</a> / FSI Visualization</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">FSI · Ansys · 5 min read</div>
+    <h1>Visualizing 2-Way FSI Results Without Losing the Coupling</h1>
+  </div>
+</section>
+<section class="sheet">
+  <div class="wrap section" style="padding-top:0;">
+    <div class="prose reveal in">
+      <p>Two-way fluid-structure interaction produces two solutions that only mean something together: a flow field that deforms a structure, and a deformed structure that changes the flow field back. The visualization mistake I see most often is presenting them separately — a Fluent contour in one image, a Mechanical deformation plot in another — which quietly discards the thing FSI was run to capture in the first place: the coupling itself.</p>
+      <h2>Keep both solution cells linked</h2>
+      <p>In a coupled Fluent + Mechanical system, the practical fix is to bring both solution cells into a single CFD-Post session rather than exporting each one to its own post-processor. With both solutions linked, you can overlay the deformed structural mesh directly on the flow-field contour, at the same solution time step, and show pressure loading and displacement as one consistent picture instead of two that the viewer has to mentally superimpose.</p>
+      <p>This matters most for anything with a flutter or resonance question attached — a wing, a blade, a slender panel — where the interesting physics is specifically the phase relationship between aerodynamic loading and structural response. A static side-by-side comparison can make a stable, damped response look identical to a growing flutter mode; only the coupled, time-resolved view actually distinguishes them.</p>
+      <h2>When the model gets too large for one post-processor</h2>
+      <p>For larger transient FSI cases — long time histories, fine structural meshes, or several coupled bodies — CFD-Post's linked-solution approach can become unwieldy. EnSight is a reasonable alternative for these cases: it handles multi-domain, multi-solver datasets more comfortably at scale, at the cost of a steeper setup for a one-off analysis. My rule of thumb is to stay in CFD-Post for single-body flutter/aeroelastic studies where the linked-cell workflow is fast to set up, and move to EnSight once the case involves multiple coupled bodies or a transient history long enough that CFD-Post's session files become slow to navigate.</p>
+      <h2>What this looks like in practice</h2>
+      <p>On the UAV aeroelastic flutter work described in Projects, the combined visualization is what actually lets a flutter boundary be read off with confidence — the animation shows the structural mode growing or decaying in step with the aerodynamic pressure field driving it, rather than presenting a displacement number that has to be trusted on its own. That single view tends to answer the stakeholder's real question — "is this going to flutter, and at what condition" — faster than a written table of modal frequencies ever does.</p>
+    </div>
+    <div class="btn-row reveal" style="margin-top:40px;">
+      <a href="project-uav-fsi.html" class="btn primary">See the applied FSI project</a>
+      <a href="insights.html" class="btn">More insights</a>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">MHN.ENG</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor — Aerodynamics &amp; Multiphysics Engineer. CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems, from Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="research.html">Research</a>
+          <a href="projects.html">Projects</a>
+          <a href="experience.html">Experience</a>
+          <a href="insights.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="consultancy.html">Consultancy</a>
+          <a href="contact.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · MHN.ENG</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>

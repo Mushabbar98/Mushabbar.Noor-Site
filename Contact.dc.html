@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</helmet>
+  <header class="nav">
+    <div class="wrap">
+      <a href="Home.dc.html" class="nav-brand"><span class="dot"></span>Mushabbar.Noor</a>
+      <nav class="nav-links">
+        <a href="Home.dc.html">Home</a>
+        <a href="About.dc.html">About</a>
+        <a href="Research.dc.html">Research</a>
+        <a href="Projects.dc.html">Projects</a>
+        <a href="Consultancy.dc.html">Consultancy</a>
+        <a href="Insights.dc.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="Contact.dc.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="Home.dc.html">Home</a> / Contact</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Contact</div>
+    <h1>Tell me what you're working on.</h1>
+    <p class="lede" style="max-width:56ch;margin-top:16px;">Research collaboration, a role to fill, or a project that needs an outside CFD, FSI or thermal analyst. I usually reply within a day or two.</p>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section" style="padding-top:0;display:grid;grid-template-columns:1fr 1fr;gap:56px;">
+    <div>
+      <form class="inquiry" id="inquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="post">
+        <div class="row2">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div>
+          <label for="intent">This is about</label>
+          <select id="intent" name="intent">
+            <option>Research collaboration</option>
+            <option>Job / recruiting opportunity</option>
+            <option>Freelance or consultancy project</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What are you working on, and what would be useful from me?" required></textarea>
+        </div>
+        <button type="submit" class="btn primary" style="justify-self:start;">Send message</button>
+        <p id="form-status" style="display:none;margin-top:4px;"></p>
+      </form>
+      <script>
+        document.getElementById('inquiry-form').addEventListener('submit', async function(e){
+          e.preventDefault();
+          const form = e.target, status = document.getElementById('form-status');
+          const data = new FormData(form);
+          try {
+            const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+            status.style.display = 'block';
+            if (res.ok) { status.textContent = "Thanks, your message is on its way. I'll reply within a day or two."; form.reset(); }
+            else { status.textContent = 'Something went wrong. Please email mushabbarhn@gmail.com directly.'; }
+          } catch (err) {
+            status.style.display = 'block';
+            status.textContent = 'Something went wrong. Please email mushabbarhn@gmail.com directly.';
+          }
+        });
+      </script>
+    </div>
+
+    <div>
+      <div class="titleblock" style="border-top:1px solid var(--line-strong);grid-template-columns:1fr;">
+        <div class="cell"><div class="k">Email</div><div class="v"><a href="mailto:mushabbarhn@gmail.com">mushabbarhn@gmail.com</a></div></div>
+        <div class="cell"><div class="k">Location</div><div class="v">Rawalpindi, Pakistan</div></div>
+        <div class="cell"><div class="k">Availability</div><div class="v">Remote consulting worldwide · on-site by arrangement</div></div>
+        <div class="cell"><div class="k">Response time</div><div class="v">24–48 hours</div></div>
+      </div>
+      <div style="margin-top:28px;">
+        <p style="margin-bottom:14px;">Prefer another channel?</p>
+        <div class="btn-row">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener" class="btn">Upwork</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf" class="btn">Download CV</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Mushabbar.Noor</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor. Aerodynamics and multiphysics engineering: CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems. Based in Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="Research.dc.html">Research</a>
+          <a href="Projects.dc.html">Projects</a>
+            <a href="Insights.dc.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="Consultancy.dc.html">Consultancy</a>
+          <a href="Contact.dc.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · Mushabbar.Noor</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+
+</x-dc>
+</body>
+</html>

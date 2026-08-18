@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2 kg Acrobatic UAV Digital Twin — Case Study</title>
+<meta name="description" content="A real-time UAV digital twin combining 6-DOF simulation, live MAVLink telemetry, and a sub-2ms low-fidelity physics suite.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-brand"><span class="dot"></span>MHN.ENG</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="consultancy.html">Consultancy</a>
+        <a href="experience.html">Experience</a>
+        <a href="insights.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="contact.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="index.html">Home</a> / <a href="projects.html">Projects</a> / UAV Digital Twin</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Independent project</div>
+    <h1>2 kg Acrobatic UAV Digital Twin</h1>
+    <p class="lede" style="max-width:62ch;margin-top:16px;">A full digital-twin ecosystem built around a 6-DOF flight simulation — live telemetry, a sub-2ms low-fidelity physics suite, and a real-vs-simulated comparison dashboard, with no training data required.</p>
+  </div>
+  <div class="wrap">
+    <div class="titleblock reveal in">
+      <div class="cell"><div class="k">Aircraft</div><div class="v">2 kg acrobatic UAV</div></div>
+      <div class="cell"><div class="k">Telemetry</div><div class="v">MAVLink @ 100 Hz</div></div>
+      <div class="cell"><div class="k">Physics cycle</div><div class="v">&lt; 2 ms, no training data</div></div>
+      <div class="cell"><div class="k">Stack</div><div class="v">MATLAB · Python · Three.js</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section" style="padding-top:56px;">
+    <div class="prose reveal in">
+      <h2>Starting point</h2>
+      <p>The project began as a 6-DOF flight dynamics simulation built in MATLAB/Simulink — the standard tool for early flight-control and handling-qualities work. The goal was to extend that offline model into something that runs alongside a real aircraft in the field, comparing live behaviour against the simulated prediction in real time.</p>
+      <h2>Building the twin</h2>
+      <p>A Python service receives MAVLink telemetry from a Pixhawk flight controller at 100 Hz and stores it in MongoDB and InfluxDB for both structured querying and time-series analysis. A comparison engine runs the real telemetry stream against the simulated 6-DOF model concurrently, and an HTML dashboard — built with Three.js for 3D attitude visualization and Chart.js for time-series plots — renders both in real time.</p>
+      <p>The physics layer deliberately avoids a data-hungry ML surrogate. Instead it's a low-fidelity analytical suite — thin airfoil theory and lifting-line theory for aerodynamic loads, beam theory for structural deflection, Von Mises stress evaluation, and Miner's rule for fatigue accumulation — chosen so the whole physics stack executes in under 2 ms per cycle with zero training data, making it usable from the very first flight rather than after a data-collection campaign.</p>
+    </div>
+
+    <div class="metrics reveal" style="margin-top:40px;">
+      <div class="m"><div class="v">100 Hz</div><div class="l">live MAVLink telemetry ingestion</div></div>
+      <div class="m"><div class="v">&lt; 2 ms</div><div class="l">per-cycle low-fidelity physics suite</div></div>
+      <div class="m"><div class="v">0</div><div class="l">training data required to run</div></div>
+      <div class="m"><div class="v">Real-time</div><div class="l">3D + time-series comparison dashboard</div></div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:40px;">
+      <p>Outcome: a working example of how classical flight-dynamics theory, rather than a trained model, can deliver a real-time digital twin — directly relevant to the surrogate-modeling and digital-twin research direction described on the Research page.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet tint">
+  <div class="wrap section" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div><div class="eyebrow">Next case study</div><h2 style="font-size:1.4rem;margin:0;">Avionics LRU Thermal Qualification</h2></div>
+    <a href="project-thermal-lru.html" class="btn primary">View project →</a>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">MHN.ENG</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor — Aerodynamics &amp; Multiphysics Engineer. CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems, from Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="research.html">Research</a>
+          <a href="projects.html">Projects</a>
+          <a href="experience.html">Experience</a>
+          <a href="insights.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="consultancy.html">Consultancy</a>
+          <a href="contact.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · MHN.ENG</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>

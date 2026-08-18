@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</helmet>
+  <header class="nav">
+    <div class="wrap">
+      <a href="Home.dc.html" class="nav-brand"><span class="dot"></span>Mushabbar.Noor</a>
+      <nav class="nav-links">
+        <a href="Home.dc.html">Home</a>
+        <a href="About.dc.html" class="active">About</a>
+        <a href="Research.dc.html">Research</a>
+        <a href="Projects.dc.html">Projects</a>
+        <a href="Consultancy.dc.html">Consultancy</a>
+        <a href="Insights.dc.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="Contact.dc.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="Home.dc.html">Home</a> / About</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">About</div>
+    <h1>From avionics thermal qualification to full-vehicle aerodynamics.</h1>
+  </div>
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 1.2fr;gap:56px;padding-bottom:64px;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <figure class="figure ticks">
+        <img src="assets/img/portrait-museum.jpg" alt="Mushabbar Husnain Noor at the Turkish Aeronautical Association museum">
+        <figcaption>Turkish Aeronautical Association Museum, Ankara</figcaption>
+      </figure>
+      <figure class="figure ticks">
+        <img src="assets/img/nasa-conference.jpg" alt="Mushabbar Husnain Noor at the NASA exhibit, International Astronautical Congress 2023" style="aspect-ratio:4/3;object-fit:cover;object-position:50% 30%;">
+        <figcaption>International Astronautical Congress, Baku, 2023</figcaption>
+      </figure>
+    </div>
+    <div class="prose">
+      <p>I'm a Mechanical Engineer, trained at Air University in Islamabad. Most of my work has been about the same question: whether airflow, heat and structural load will let a piece of hardware survive in the field. I started out cooling avionics boxes bolted into fighter aircraft bays. These days the work is CFD and fluid-structure interaction on unmanned aircraft, small-scale turbomachinery and ground vehicles.</p>
+      <p>I currently work as an Aerodynamics Engineer at <strong>Baykar Technologies</strong>, across Pakistan and Türkiye, where I run CFD on UAV airframes and propeller engines, conduct FSI-based aeroelastic flutter analysis, build VN-diagrams and flight envelopes, and support hardware-in-the-loop (HILS) development with aerodynamic parameters.</p>
+      <p>Before that, I led aerothermal research at Shocks &amp; Stars Engineering and at Air University's AEROFLUX Lab, qualifying avionics LRUs under MIL-STD/MIL-E-5400, running hypersonic scramjet and plasma-arc thruster analysis, and securing government research grants from SPRC along the way.</p>
+      <figure class="figure ticks" style="margin:24px 0;">
+        <img src="assets/img/scramjet-presentation.jpeg" alt="Presenting scramjet engine CFD results at Air University">
+        <figcaption>Presenting scramjet engine CFD results, AEROFLUX Lab, Air University</figcaption>
+      </figure>
+      <div class="btn-row" style="margin-top:20px;">
+        <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf" class="btn primary">Download full CV (PDF)</a>
+        <a href="#experience" class="btn">Jump to experience</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet" id="experience">
+  <div class="wrap section">
+    <div class="section-head">
+      <div><div class="eyebrow">Experience</div><h2>Four roles, from LRU cooling to full-vehicle aerodynamics</h2></div>
+    </div>
+    <div class="timeline">
+
+      <div class="trow">
+        <div class="when mono">Feb 2024 to Present</div>
+        <div>
+          <h3>Aerodynamics Engineer</h3>
+          <div class="role">Baykar Technologies · Pakistan &amp; Türkiye</div>
+          <ul>
+            <li>CFD analysis for UAV airframes and propeller engines, optimizing aerodynamic efficiency and performance</li>
+            <li>Static and dynamic stability analysis feeding flight control design</li>
+            <li>Aerodynamic parameter calculation for hardware-in-the-loop (HILS) development</li>
+            <li>2-way FSI aeroelastic analysis to determine flutter boundaries and structural limits</li>
+            <li>G-load structural assessments on design modifications</li>
+            <li>VN-diagram development and flight-envelope definition</li>
+            <li>Structural ground testing of aerostructures, validating computational models</li>
+            <li>Modal analysis to identify and mitigate resonance risk</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trow">
+        <div class="when mono">Aug 2022 to Jan 2024</div>
+        <div>
+          <h3>Aerothermal Research Lead Engineer</h3>
+          <div class="role">Shocks &amp; Stars Engineering Pvt Ltd., Islamabad</div>
+          <ul>
+            <li>Aerothermal design analysis of airborne electronics for AEROFLUX III across flight regimes</li>
+            <li>Analytical and computational heat-transfer analysis of LRUs in conditioned and unconditioned bays</li>
+            <li>Computational hypersonic aerothermodynamic and combustion analysis of a scramjet engine</li>
+            <li>Computational analysis of plasma-arc thrusters using COMSOL Multiphysics</li>
+            <li>Developed novel algorithms and high-fidelity math models for thermo-fluid problems</li>
+            <li>Response-surface DoE method for full flight-envelope analysis</li>
+            <li>MIL-E-5400 thermal qualification for PAF's Airworthiness Certification Authority</li>
+            <li>Secured PKR 1.5M (SPRC) and Government of Pakistan research grants</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trow">
+        <div class="when mono">Jan 2022 to Jul 2022</div>
+        <div>
+          <h3>Aerothermal Lead Engineer</h3>
+          <div class="role">AEROFLUX Lab, Air University, Islamabad</div>
+          <ul>
+            <li>Analytical and computational thermal analysis of avionics LRUs in conditioned bays of high-performance aircraft</li>
+            <li>MIL-STD-5400 thermal design qualification for PAF's Airworthiness Certification Authority</li>
+            <li>Normal- and failure-mode thermal analysis of existing designs</li>
+            <li>Designed multiple passive and active heat-transfer modes for airborne electronics</li>
+            <li>Secured PKR 2.5M research grant from SPRC</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trow">
+        <div class="when mono">Jun 2021 to Jan 2022</div>
+        <div>
+          <h3>Undergraduate Research Assistant</h3>
+          <div class="role">AEROFLUX Lab, Air University, Islamabad</div>
+          <ul>
+            <li>Thermal analysis of avionics LRUs in conditioned bays of commercial aircraft</li>
+            <li>Analytical and computational thermal analysis for the AEROFLUX I programme</li>
+            <li>MIL-E-5400 thermal design qualification</li>
+            <li>Designed passive and active heat-transfer modes for LRU operation</li>
+            <li>Secured PKR 1.5M research grant from SPRC</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sheet tint">
+  <div class="wrap section">
+    <div class="section-head">
+      <div><div class="eyebrow">Tools &amp; software</div><h2>What I build and analyze with</h2></div>
+    </div>
+    <div class="toolgrid">
+      <div class="toolcol">
+        <div class="h">Expertise</div>
+        <li>Aerothermodynamics</li>
+        <li>Aeroelasticity</li>
+        <li>Optimization</li>
+        <li>Adjoint-based optimization</li>
+        <li>Avionics thermal management</li>
+        <li>Turbomachinery</li>
+        <li>Design of Experiments (DoE)</li>
+      </div>
+      <div class="toolcol">
+        <div class="h">CAD / CFD / FEA</div>
+        <li>SOLIDWORKS</li>
+        <li>SpaceClaim</li>
+        <li>ANSYS Fluent, CFX, ICEM</li>
+        <li>ANSYS Static Structural, Thermal</li>
+        <li>COMSOL Multiphysics</li>
+        <li>Pointwise</li>
+      </div>
+      <div class="toolcol">
+        <div class="h">Scripting</div>
+        <li>MATLAB</li>
+        <li>Python (basic)</li>
+      </div>
+      <div class="toolcol">
+        <div class="h">Prototyping</div>
+        <li>Laser &amp; wire cutting</li>
+        <li>CNC lathe &amp; mill</li>
+        <li>3D printing</li>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section">
+    <div class="section-head">
+      <div><div class="eyebrow">Certifications &amp; recognition</div><h2>Credentials</h2></div>
+    </div>
+    <div class="metrics">
+      <div class="m"><div class="v">Baykar</div><div class="l">Certified Aerodynamics Engineer, Loiter Munition UAVs</div></div>
+      <div class="m"><div class="v">PEC</div><div class="l">Pakistan Engineering Council Certified Engineer</div></div>
+      <div class="m"><div class="v">Airtech '19</div><div class="l">Winner, Air CAD Competition</div></div>
+      <div class="m"><div class="v">2017–2021</div><div class="l">PEEF Scholarship recipient</div></div>
+    </div>
+    <div class="btn-row" style="margin-top:32px;">
+      <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf" class="btn primary">Download full CV (PDF)</a>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Mushabbar.Noor</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor. Aerodynamics and multiphysics engineering: CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems. Based in Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="Research.dc.html">Research</a>
+          <a href="Projects.dc.html">Projects</a>
+            <a href="Insights.dc.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="Consultancy.dc.html">Consultancy</a>
+          <a href="Contact.dc.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · Mushabbar.Noor</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+
+</x-dc>
+</body>
+</html>

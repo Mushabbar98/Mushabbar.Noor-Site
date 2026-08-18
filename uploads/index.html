@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M. H. Noor — Aerothermal, CFD & Structural Simulation Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1726;
+  --ink-soft:#1A2438;
+  --paper:#F4F6F9;
+  --surface:#FFFFFF;
+  --flow:#1E5FA8;
+  --flow-bright:#2E7FD1;
+  --thermal:#DD5330;
+  --line:#E3E8EF;
+  --line-strong:#CBD4DF;
+  --muted:#59657A;
+  --text:#15212F;
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'IBM Plex Sans',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--text);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--flow);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.eyebrow::before{
+  content:"";width:24px;height:1px;background:var(--flow);display:inline-block;
+}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:var(--ink)}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(244,246,249,0.82);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:var(--font-mono);font-weight:500;font-size:14px;letter-spacing:0.14em;color:var(--ink)}
+.brand span{color:var(--flow)}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-family:var(--font-mono);font-size:13px;letter-spacing:0.04em;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.btn{
+  font-family:var(--font-mono);font-size:13px;letter-spacing:0.04em;
+  padding:10px 18px;border-radius:2px;transition:all .2s;cursor:pointer;border:1px solid transparent;display:inline-block;
+}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--flow)}
+.btn-ghost{border-color:var(--line-strong);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+.nav-cta{padding:9px 16px}
+.menu-toggle{display:none;background:none;border:none;font-family:var(--font-mono);font-size:22px;color:var(--ink);cursor:pointer}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:82px 0 70px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,68px);margin:22px 0 0}
+.hero .sub{font-size:19px;color:var(--muted);max-width:520px;margin-top:24px}
+.hero .sub b{color:var(--text);font-weight:500}
+.hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-visual{position:relative;height:420px}
+.flowfield{width:100%;height:100%;display:block}
+.stream{fill:none;stroke-width:1.6;stroke-linecap:round;
+  stroke-dasharray:6 10;
+  animation:flow 3.2s linear infinite;
+}
+@keyframes flow{to{stroke-dashoffset:-160}}
+.proof{
+  margin-top:56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:18px 0;display:flex;gap:14px 34px;flex-wrap:wrap;
+  font-family:var(--font-mono);font-size:12.5px;letter-spacing:0.06em;color:var(--muted);
+}
+.proof span{display:inline-flex;align-items:center;gap:10px}
+.proof span::before{content:"";width:5px;height:5px;background:var(--thermal);border-radius:50%}
+
+/* ---------- SECTION SHELL ---------- */
+.section{padding:96px 0;border-top:1px solid var(--line)}
+.section-head{max-width:640px;margin-bottom:48px}
+.section-head h2{font-size:clamp(28px,3.6vw,42px);margin-top:16px}
+.section-head p{color:var(--muted);margin-top:16px;font-size:17px}
+.idx{font-family:var(--font-mono);font-size:12px;color:var(--line-strong);letter-spacing:0.1em}
+
+/* ---------- ENTRY DOORS ---------- */
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.door{
+  background:var(--surface);border:1px solid var(--line);border-radius:4px;
+  padding:30px 28px 26px;transition:transform .25s,border-color .25s,box-shadow .25s;
+  display:flex;flex-direction:column;min-height:230px;
+}
+.door:hover{transform:translateY(-4px);border-color:var(--flow);box-shadow:0 16px 40px -24px rgba(30,95,168,0.4)}
+.door .tag{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--flow)}
+.door h3{font-size:22px;margin:14px 0 10px}
+.door p{color:var(--muted);font-size:15px;flex:1}
+.door .go{font-family:var(--font-mono);font-size:13px;color:var(--ink);margin-top:18px;display:inline-flex;align-items:center;gap:8px;transition:gap .2s}
+.door:hover .go{gap:14px;color:var(--flow)}
+
+/* ---------- WORK ---------- */
+.work-list{display:flex;flex-direction:column;gap:2px}
+.case{
+  background:var(--surface);border:1px solid var(--line);border-radius:4px;
+  padding:36px 34px;display:grid;grid-template-columns:0.9fr 1.6fr;gap:36px;
+  transition:border-color .25s;
+}
+.case:hover{border-color:var(--line-strong)}
+.case-left .kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em;color:var(--thermal);text-transform:uppercase}
+.case-left h3{font-size:25px;margin:14px 0 12px}
+.case-left .meta{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);letter-spacing:0.03em}
+.csr{display:grid;grid-template-columns:1fr 1fr;gap:22px 30px}
+.csr .block .lab{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--flow);margin-bottom:7px}
+.csr .block p{font-size:14.5px;color:var(--text)}
+.csr .block.results p b{color:var(--ink);font-weight:600}
+.tools-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.03em;color:var(--muted);border:1px solid var(--line);border-radius:2px;padding:4px 9px;background:var(--paper)}
+
+/* ---------- EXPERTISE ---------- */
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:40px}
+.cap{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:28px 26px;position:relative}
+.cap .n{font-family:var(--font-mono);font-size:12px;color:var(--line-strong);position:absolute;top:24px;right:26px}
+.cap h3{font-size:20px;margin-bottom:12px}
+.cap p{font-size:14.5px;color:var(--muted)}
+.cap .apply{margin-top:16px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.04em;color:var(--flow)}
+.matrix{background:var(--ink);border-radius:4px;padding:34px 34px 30px;color:#cdd6e2}
+.matrix h3{color:#fff;font-size:18px;margin-bottom:22px}
+.matrix-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.matrix .lab{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#6f8bb0;margin-bottom:12px}
+.matrix ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.matrix li{font-size:14px;color:#cdd6e2}
+
+/* ---------- RESEARCH ---------- */
+.research-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.pub{border-top:1px solid var(--line);padding:22px 0}
+.pub:first-child{border-top:none;padding-top:0}
+.pub .venue{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.08em;color:var(--thermal);text-transform:uppercase}
+.pub h4{font-family:var(--font-display);font-weight:500;font-size:17px;color:var(--ink);margin:9px 0 8px;line-height:1.3}
+.pub .cite{font-size:13.5px;color:var(--muted)}
+.pub a.doi{font-family:var(--font-mono);font-size:12.5px;color:var(--flow);margin-top:8px;display:inline-block}
+.rside .lab{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--flow);margin-bottom:14px}
+.rside ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:30px}
+.rside li{font-size:14.5px;padding-left:18px;position:relative;color:var(--text)}
+.rside li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;background:var(--flow);border-radius:1px}
+.forward{background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--thermal);border-radius:3px;padding:20px 22px}
+.forward p{font-size:14px;color:var(--muted)}
+
+/* ---------- SERVICES ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:28px 26px;transition:border-color .25s,transform .25s}
+.svc:hover{border-color:var(--flow);transform:translateY(-3px)}
+.svc .num{font-family:var(--font-mono);font-size:12px;color:var(--flow);letter-spacing:0.1em}
+.svc h3{font-size:20px;margin:12px 0 10px}
+.svc .prob{font-size:14.5px;color:var(--muted);margin-bottom:14px}
+.svc .deliver{font-family:var(--font-mono);font-size:12.5px;color:var(--text);border-top:1px dashed var(--line-strong);padding-top:12px}
+.svc .deliver b{color:var(--flow);font-weight:500}
+
+/* ---------- ABOUT / CONTACT ---------- */
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start}
+.about p{font-size:16px;color:var(--text);margin-bottom:18px}
+.about p.lead{font-size:19px;color:var(--ink)}
+.facts{display:flex;flex-direction:column;gap:0}
+.fact{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-top:1px solid var(--line);font-size:14px}
+.fact:first-child{border-top:none}
+.fact .k{font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
+.fact .v{text-align:right;color:var(--text)}
+.contact-box{background:var(--ink);border-radius:6px;padding:40px;margin-top:56px;text-align:center}
+.contact-box h2{color:#fff;font-size:clamp(26px,3.4vw,38px)}
+.contact-box p{color:#9fb0c6;margin:16px auto 28px;max-width:440px;font-size:16px}
+.contact-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-on-dark{background:#fff;color:var(--ink)}
+.btn-on-dark:hover{background:var(--flow);color:#fff}
+.btn-outline-dark{border:1px solid #3a4b64;color:#cdd6e2}
+.btn-outline-dark:hover{border-color:#fff;color:#fff}
+
+/* ---------- FOOTER ---------- */
+.footer{border-top:1px solid var(--line);padding:40px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer .brand{font-size:13px}
+.footer .fnote{font-family:var(--font-mono);font-size:12px;color:var(--muted);letter-spacing:0.03em}
+.footer .flinks{display:flex;gap:22px}
+.footer .flinks a{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);transition:color .2s}
+.footer .flinks a:hover{color:var(--ink)}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{height:280px;order:-1}
+  .doors,.matrix-cols{grid-template-columns:1fr}
+  .case{grid-template-columns:1fr;gap:24px}
+  .cap-grid,.svc-grid{grid-template-columns:1fr}
+  .research-grid,.about-grid{grid-template-columns:1fr;gap:36px}
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:flex-start;padding:20px 32px;gap:18px;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+}
+@media(max-width:560px){
+  .wrap{padding:0 20px}
+  .section{padding:64px 0}
+  .csr{grid-template-columns:1fr}
+  .contact-box{padding:30px 22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .stream{animation:none}
+  .reveal{transition:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+:focus-visible{outline:2px solid var(--flow);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">M.H.<span>NOOR</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#research">Research</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="/cv.pdf" class="btn btn-primary nav-cta">Download CV</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">≡</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Aerospace-grade simulation</span>
+        <h1>I solve demanding thermal and fluid-flow problems.</h1>
+        <p class="sub">Aerothermal, CFD and structural-simulation engineer. Four years turning <b>aerospace-grade methods</b> into validated hardware decisions — for aerospace, automotive, energy and electronics-cooling teams.</p>
+        <div class="hero-cta">
+          <a href="#work" class="btn btn-primary">View selected work</a>
+          <a href="/cv.pdf" class="btn btn-ghost">Download CV</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="flowfield" viewBox="0 0 800 460" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="fg" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#1E5FA8"/>
+              <stop offset="0.55" stop-color="#2E7FD1"/>
+              <stop offset="1" stop-color="#DD5330"/>
+            </linearGradient>
+          </defs>
+          <!-- faint airfoil body -->
+          <path d="M300 250 C 400 214, 540 224, 610 244 C 540 260, 400 262, 300 250 Z"
+                fill="#1E5FA8" opacity="0.06"/>
+          <path d="M300 250 C 400 214, 540 224, 610 244" fill="none" stroke="#15212F" stroke-width="1" opacity="0.25"/>
+          <!-- streamlines -->
+          <g stroke="url(#fg)">
+            <path class="stream" d="M-20 70 C 240 70, 360 78, 800 62"/>
+            <path class="stream" style="animation-delay:.2s" d="M-20 120 C 240 122, 380 120, 800 108"/>
+            <path class="stream" style="animation-delay:.4s" d="M-20 175 C 250 178, 400 150, 800 158"/>
+            <path class="stream" style="animation-delay:.1s" d="M-20 225 C 240 226, 330 200, 620 214 C 700 220, 760 226, 800 228"/>
+            <path class="stream" style="animation-delay:.5s" d="M-20 275 C 240 274, 330 300, 620 286 C 700 280, 760 274, 800 272"/>
+            <path class="stream" style="animation-delay:.3s" d="M-20 325 C 250 322, 400 350, 800 340"/>
+            <path class="stream" style="animation-delay:.15s" d="M-20 380 C 240 378, 380 382, 800 392"/>
+            <path class="stream" style="animation-delay:.45s" d="M-20 430 C 240 430, 360 424, 800 440"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="proof">
+      <span>4+ yrs industry</span>
+      <span>2 peer-reviewed publications</span>
+      <span>MIL-STD-5400 qualified</span>
+      <span>ANSYS · COMSOL · SOLIDWORKS · MATLAB</span>
+    </div>
+  </div>
+</header>
+
+<!-- ENTRY DOORS -->
+<section class="section" id="doors" style="border-top:none">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Start here</span>
+      <h2>Three ways to work with me</h2>
+      <p>Whatever brought you here, there's a direct path in.</p>
+    </div>
+    <div class="doors">
+      <a href="#expertise" class="door reveal">
+        <span class="tag">For employers</span>
+        <h3>Industrial &amp; R&amp;D roles</h3>
+        <p>CFD, thermal and structural analysis for teams building aircraft, vehicles and thermal-critical hardware.</p>
+        <span class="go">See capabilities →</span>
+      </a>
+      <a href="#research" class="door reveal">
+        <span class="tag">For researchers</span>
+        <h3>Research &amp; PhD collaboration</h3>
+        <p>Peer-reviewed aerothermal research, funded grants, and a forward line into ML-accelerated CFD.</p>
+        <span class="go">Read research →</span>
+      </a>
+      <a href="#services" class="door reveal">
+        <span class="tag">For clients</span>
+        <h3>Consulting &amp; freelance</h3>
+        <p>Scoped CFD, thermal-qualification and FEA studies, delivered as validated models and clear reports.</p>
+        <span class="go">See services →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx">01 / WORK</span>
+      <h2>Selected work</h2>
+      <p>A handful of programs where simulation had to survive contact with real hardware, test chambers and certification standards.</p>
+    </div>
+    <div class="work-list">
+
+      <article class="case reveal">
+        <div class="case-left">
+          <span class="kicker">Avionics thermal qualification</span>
+          <h3>AEROFLUX I–III</h3>
+          <div class="meta">Air University · Shocks &amp; Stars<br>2020 – Present</div>
+        </div>
+        <div class="csr">
+          <div class="block"><div class="lab">Challenge</div><p>Airborne electronics (LRUs) must survive extreme thermal envelopes across altitude, Mach and duty cycle — and be certified to MIL-STD-5400.</p></div>
+          <div class="block"><div class="lab">Solution</div><p>Analytical and CFD aerothermal models across the full flight envelope, a response-surface DoE method, and a MATLAB tool predicting temperature over the whole regime.</p></div>
+          <div class="block"><div class="lab">Tools</div><div class="tools-row"><span class="chip">ANSYS Fluent</span><span class="chip">MATLAB</span><span class="chip">DoE / RSM</span></div></div>
+          <div class="block results"><div class="lab">Results</div><p><b>Qualified to MIL-STD-5400</b> for airworthiness certification · validated to within <b>[X]°C</b> of environmental-chamber tests · <b>3 funded</b> research grants.</p></div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-left">
+          <span class="kicker">UAV aerodynamics &amp; aeroelasticity</span>
+          <h3>Unmanned Platforms</h3>
+          <div class="meta">Baykar Technologies<br>2024 – Present</div>
+        </div>
+        <div class="csr">
+          <div class="block"><div class="lab">Challenge</div><p>Unmanned platforms need verified aerodynamic performance and flutter-free structural limits before they ever fly.</p></div>
+          <div class="block"><div class="lab">Solution</div><p>CFD across UAV and propeller configurations, FSI-based aeroelastic analysis for flutter boundaries, VN-diagram and flight-envelope definition, plus modal and G-load assessment.</p></div>
+          <div class="block"><div class="lab">Tools</div><div class="tools-row"><span class="chip">ANSYS Fluent</span><span class="chip">Static Structural</span><span class="chip">FSI</span></div></div>
+          <div class="block results"><div class="lab">Results</div><p>Defined <b>flight envelope</b> and flutter limits · <b>[X]%</b> aerodynamic-efficiency improvement · models validated against ground structural tests.</p></div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-left">
+          <span class="kicker">Hypersonics · configuration trade study</span>
+          <h3>Scramjet Aerothermodynamics</h3>
+          <div class="meta">Shocks &amp; Stars Engineering<br>2022 – 2024</div>
+        </div>
+        <div class="csr">
+          <div class="block"><div class="lab">Challenge</div><p>Hypersonic propulsion demands a grip on aerothermal loads and combustion behaviour at extreme Mach — and a defensible choice between competing configurations.</p></div>
+          <div class="block"><div class="lab">Solution</div><p>Computational hypersonic aerothermodynamic and combustion analysis across candidate scramjet configurations, scored on a defined figure of merit to select the strongest design.</p></div>
+          <div class="block"><div class="lab">Tools</div><div class="tools-row"><span class="chip">ANSYS Fluent</span><span class="chip">COMSOL</span><span class="chip">Trade study</span></div></div>
+          <div class="block results"><div class="lab">Results</div><p>Selected <b>[preferred configuration]</b> on combustion efficiency and thermal margin · quantified trade-offs across <b>[X]</b> candidate geometries.</p></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="section" id="expertise">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx">02 / EXPERTISE</span>
+      <h2>Capabilities, by method</h2>
+      <p>Organised around what I actually do — so the method reads the same whether you're building an airframe, an EV battery pack or a data-centre cooling loop.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap reveal"><span class="n">A</span><h3>CFD &amp; Fluid Dynamics</h3><p>External and internal flow, propeller and UAV aerodynamics, hypersonics and combustion analysis.</p><div class="apply">Aerospace · Automotive / EV · Turbomachinery</div></div>
+      <div class="cap reveal"><span class="n">B</span><h3>Thermal Management &amp; Heat Transfer</h3><p>Electronics and avionics cooling, MIL-STD-5400 qualification, passive and active cooling, transient thermal.</p><div class="apply">Electronics cooling · EV · Energy</div></div>
+      <div class="cap reveal"><span class="n">C</span><h3>Structural &amp; Aeroelastic Analysis</h3><p>FSI, flutter, modal analysis, VN-diagrams, G-load assessment and static structural / FEA.</p><div class="apply">Aerospace · Automotive · Mechanical systems</div></div>
+      <div class="cap reveal"><span class="n">D</span><h3>Optimization &amp; DoE</h3><p>Response-surface methods, design of experiments and surrogate modelling for simulation-driven design.</p><div class="apply">Any simulation-led design problem</div></div>
+    </div>
+    <div class="matrix reveal">
+      <h3>Toolchain</h3>
+      <div class="matrix-cols">
+        <div><div class="lab">Simulation</div><ul><li>ANSYS Fluent</li><li>ANSYS ICEM · Structural · Thermal</li><li>COMSOL Multiphysics</li><li>Pointwise</li></ul></div>
+        <div><div class="lab">Design &amp; Compute</div><ul><li>SOLIDWORKS</li><li>MATLAB</li><li>Python</li></ul></div>
+        <div><div class="lab">Prototyping</div><ul><li>CNC lathe &amp; mill</li><li>3D printing</li><li>Laser &amp; wire cutting</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="section" id="research">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx">03 / RESEARCH</span>
+      <h2>Research &amp; publications</h2>
+      <p>Peer-reviewed work in aerothermal analysis, backed by competitive research funding — and a clear line into where I'm taking it next.</p>
+    </div>
+    <div class="research-grid">
+      <div class="rleft">
+        <div class="pub reveal">
+          <div class="venue">IEEE · IBCAST 2022</div>
+          <h4>A Figure-of-Merit Based Computational Heat-Transfer Method for Aerothermal Analysis of Airborne Electronics System LRU</h4>
+          <div class="cite">Noor, M.H., Sarosh, A., Riaz, U., Adnan, M., Awan, O.A.A. — 19th Int. Bhurban Conference on Applied Sciences &amp; Technology, pp. 70–75.</div>
+          <a class="doi" href="https://doi.org/10.1109/IBCAST54850.2022.9990189" target="_blank" rel="noopener">DOI ↗</a>
+        </div>
+        <div class="pub reveal">
+          <div class="venue">Springer · ICASET 2023</div>
+          <h4>A Minimal-Input Dimensionless Empirical-Corrector (MIDEC) Method for Aerothermal Analysis of Airborne Electronics</h4>
+          <div class="cite">Noor, M.H., Sarosh, A., Khan, A.A. — Proc. First Int. Conference on Aeronautical Sciences, Engineering and Technology. Springer, Singapore.</div>
+          <a class="doi" href="https://doi.org/10.1007/978-981-99-7775-8_20" target="_blank" rel="noopener">DOI ↗</a>
+        </div>
+      </div>
+      <div class="rside">
+        <div class="lab">Funded research</div>
+        <ul>
+          <li>SPRC, Govt. of Pakistan — three thermal-qualification grants</li>
+          <li>NESCOM — aerothermal research agreement</li>
+        </ul>
+        <div class="lab">Research direction</div>
+        <div class="forward reveal">
+          <p>Moving toward <b style="color:var(--text)">ML-accelerated CFD</b>: physics-informed neural networks, surrogate modelling and digital twins — building and owning the simulation pipeline, not just running it.</p>
+        </div>
+        <p style="margin-top:22px;font-size:14px;color:var(--muted)">Open to PhD positions and research collaboration. <a href="#contact" style="color:var(--flow);font-family:var(--font-mono);font-size:13px">Get in touch →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx">04 / SERVICES</span>
+      <h2>Freelance &amp; consulting</h2>
+      <p>Scoped engagements for teams that need simulation depth without a full-time hire. You get a validated model and a report you can act on — not a black box.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><span class="num">S1</span><h3>CFD Simulation &amp; Analysis</h3><p class="prob">You need to understand how air, gas or fluid actually behaves around your design.</p><div class="deliver">Deliver: <b>meshed model, solved cases, annotated results &amp; recommendations.</b></div></div>
+      <div class="svc reveal"><span class="num">S2</span><h3>Thermal Design &amp; Qualification</h3><p class="prob">Your electronics or hardware run hot, and you need proof they'll survive the envelope.</p><div class="deliver">Deliver: <b>thermal model, margins, and MIL-STD-grade qualification support.</b></div></div>
+      <div class="svc reveal"><span class="num">S3</span><h3>Structural &amp; Aeroelastic Studies</h3><p class="prob">You need to know your structure holds — under load, vibration or flutter.</p><div class="deliver">Deliver: <b>FEA, modal / flutter analysis, and validated structural limits.</b></div></div>
+      <div class="svc reveal"><span class="num">S4</span><h3>Optimization &amp; DoE</h3><p class="prob">You have too many design variables and not enough runs to test them all.</p><div class="deliver">Deliver: <b>DoE plan, response surfaces, and an optimised design point.</b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="idx">05 / ABOUT</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about reveal">
+        <p class="lead">I'm a mechanical engineer who works where fluids, heat and structure meet — the places most likely to decide whether hardware flies or fails.</p>
+        <p>Over four years I've moved from a university research lab into two engineering companies, carrying the same thread throughout: build a high-fidelity model, make it survive real test data, and turn it into a decision someone can certify or ship. That's meant qualifying avionics to military standards, defining flight envelopes for unmanned aircraft, and analysing combustion inside a scramjet.</p>
+        <p>I think in systems rather than single simulations, and I'm most useful when a problem sits between disciplines. I'm now focused on the next shift in the field — machine-learning-accelerated simulation — so the pipelines I build stay ahead of the work, not behind it.</p>
+      </div>
+      <div class="facts reveal">
+        <div class="fact"><span class="k">Base</span><span class="v">Islamabad, Pakistan</span></div>
+        <div class="fact"><span class="k">Degree</span><span class="v">BSc Mechanical Engineering<br>Air University</span></div>
+        <div class="fact"><span class="k">Certifications</span><span class="v">PEC Certified Engineer<br>Baykar — Loiter-Munition UAV Aero</span></div>
+        <div class="fact"><span class="k">Languages</span><span class="v">English (fluent)<br>Urdu (native)</span></div>
+        <div class="fact"><span class="k">Open to</span><span class="v">Industry roles · PhD · Consulting<br>Europe &amp; remote</span></div>
+      </div>
+    </div>
+
+    <div class="contact-box reveal" id="contact">
+      <h2>Let's talk about your problem.</h2>
+      <p>Hiring, collaborating on research, or scoping a simulation project — I read every message.</p>
+      <div class="contact-cta">
+        <a href="mailto:mushabbarhn@gmail.com" class="btn btn-on-dark">Email me</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="btn btn-outline-dark">LinkedIn</a>
+        <a href="/cv.pdf" class="btn btn-outline-dark">Download CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a href="#top" class="brand">M.H.<span style="color:var(--flow)">NOOR</span></a>
+    <div class="flinks">
+      <a href="#work">Work</a>
+      <a href="#research">Research</a>
+      <a href="#services">Services</a>
+      <a href="mailto:mushabbarhn@gmail.com">Email</a>
+    </div>
+    <div class="fnote">© 2026 · mushabbarnoor.com</div>
+  </div>
+</footer>
+
+<script>
+// mobile menu
+const t=document.getElementById('menuToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+
+// scroll reveal
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</helmet>
+  <header class="nav">
+    <div class="wrap">
+      <a href="Home.dc.html" class="nav-brand"><span class="dot"></span>Mushabbar.Noor</a>
+      <nav class="nav-links">
+        <a href="Home.dc.html">Home</a>
+        <a href="About.dc.html">About</a>
+        <a href="Research.dc.html">Research</a>
+        <a href="Projects.dc.html">Projects</a>
+        <a href="Consultancy.dc.html">Consultancy</a>
+        <a href="Insights.dc.html" class="active">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="Contact.dc.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="Home.dc.html">Home</a> / <a href="Insights.dc.html">Insights</a> / Response-Surface DoE</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Aerothermal · DoE · 6 min read</div>
+    <h1>What a Response-Surface DoE Buys You in Flight-Envelope Thermal Analysis</h1>
+  </div>
+</section>
+<section class="sheet">
+  <div class="wrap section" style="padding-top:0;">
+    <div class="prose">
+      <p>Qualifying an avionics LRU's thermal design under MIL-E-5400 means showing it stays within limits across the aircraft's full operating envelope: every altitude band, Mach number, duty cycle and bleed-air setting the platform can fly. Taken literally, that's dozens to hundreds of distinct operating points, and running a full CFD case for each one is rarely realistic on a qualification timeline.</p>
+      <h2>The sweep-everything approach breaks down fast</h2>
+      <p>A brute-force sweep does two things badly. First, it's slow. Each CFD case takes hours to set up, solve and post-process, and a fine-grained sweep of altitude × Mach × duty cycle × bleed setting multiplies that out to weeks. Second, it tells you less than it seems to: most of that compute goes toward confirming interpolatable behaviour between points you already understand, rather than finding the actual critical condition.</p>
+      <h2>Sample smart, then interpolate with a model, not a lookup table</h2>
+      <p>The alternative is a response-surface based design of experiments: choose a structured, minimal set of CFD runs across the operating-envelope parameters, enough to characterize how temperature responds to each variable and to their interactions, rather than one run per real-world combination, then fit a response surface (or, in the MIDEC method described on the Research page, a dimensionless empirical-corrector formulation) to that sparse dataset. The result is a fast algorithm, not a lookup table: given any altitude/Mach/duty-cycle/bleed combination inside the sampled range, it predicts the LRU's temperature response without a new CFD run.</p>
+      <p>Two things make this defensible rather than just convenient. First, the DoE sample has to span the parameter space properly (corners, midpoints and a few interior points), not just the conditions that look obviously critical, because the true worst case is sometimes not where intuition expects it. Second, every response-surface prediction gets checked against dedicated CFD runs and environmental thermal-chamber test data at a handful of held-out points, so the interpolation's error bars are known rather than assumed.</p>
+      <h2>What it found in practice</h2>
+      <p>On the AEROFLUX programme, this approach is what surfaced the actual critical condition: slow-speed flight at high altitude with 1% engine bleed, rather than the high-Mach, high-bleed condition that might look more thermally aggressive on paper. A brute-force sweep would have found it eventually, at several times the compute and schedule cost, and with less insight into why it is critical. The response-surface fit also gives you the sensitivity of temperature to each input, not just an answer at one point.</p>
+      <h2>When this approach is the wrong call</h2>
+      <p>Response-surface methods assume the underlying physics varies smoothly enough across the parameter space to interpolate. They are a poor fit if the system has sharp regime changes (like a flow separation onset or a phase-change threshold) inside the sampled range, since a sparse DoE can miss a real discontinuity between sample points. In those cases, denser sampling around the suspected transition, or falling back to full sweeps in that sub-region, is worth the extra cost.</p>
+    </div>
+    <div class="btn-row" style="margin-top:40px;">
+      <a href="Project-AeroFlux-II.dc.html" class="btn primary">See the applied thermal project</a>
+      <a href="Research.dc.html" class="btn">Read the MIDEC publication</a>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Mushabbar.Noor</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor. Aerodynamics and multiphysics engineering: CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems. Based in Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="Research.dc.html">Research</a>
+          <a href="Projects.dc.html">Projects</a>
+            <a href="Insights.dc.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="Consultancy.dc.html">Consultancy</a>
+          <a href="Contact.dc.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · Mushabbar.Noor</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</helmet>
+  <header class="nav">
+    <div class="wrap">
+      <a href="Home.dc.html" class="nav-brand"><span class="dot"></span>Mushabbar.Noor</a>
+      <nav class="nav-links">
+        <a href="Home.dc.html">Home</a>
+        <a href="About.dc.html">About</a>
+        <a href="Research.dc.html">Research</a>
+        <a href="Projects.dc.html">Projects</a>
+        <a href="Consultancy.dc.html">Consultancy</a>
+        <a href="Insights.dc.html" class="active">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="Contact.dc.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="Home.dc.html">Home</a> / <a href="Insights.dc.html">Insights</a> / Tip Clearance</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Turbomachinery · 6 min read</div>
+    <h1>Why tip clearance punishes small compressors, and axial ones worst of all</h1>
+  </div>
+</section>
+<section class="sheet">
+  <div class="wrap section" style="padding-top:0;">
+    <div class="prose">
+      <p>When people compare axial and centrifugal compressors, the conversation usually starts with peak efficiency and stage pressure ratio, and on those numbers, a well-designed axial stage often wins at larger scale. But scale that same axial stage down to something you'd fit in a hand-held turbojet, and the comparison inverts, for a reason that rarely makes it onto the textbook chart.</p>
+      <h2>The clearance gap doesn't scale down with the blade</h2>
+      <p>Tip clearance is the small gap between a rotating blade tip and the surrounding casing. It has to exist for the rotor to spin without rubbing. Manufacturing tolerance, thermal growth, and bearing play all set a practical floor on how small that gap can be, and that floor doesn't shrink proportionally as the engine gets smaller. On a large industrial axial compressor, a clearance of a fraction of a millimetre is a rounding error against a blade height of tens of millimetres. Shrink the whole engine down for something in the 50–100 N thrust class, and that same absolute clearance can become a double-digit percentage of the blade span.</p>
+      <p>That matters because the flow leaking over the tip does no useful work on the rotor. It bypasses the intended flow path, rolls up into a tip-leakage vortex and mixes out downstream, taking pressure rise and efficiency with it. The loss scales roughly with clearance-to-blade-height ratio, so as blade height falls faster than the clearance can be manufactured down, tip losses grow disproportionately. Multi-stage axial designs compound the problem, since every stage pays the same tax.</p>
+      <h2>Why centrifugal sidesteps it</h2>
+      <p>A single-stage centrifugal compressor raises stagnation pressure through a different geometry: flow enters axially and is turned radially outward by a rotating impeller, with the pressure rise coming from both centrifugal effect and diffusion, rather than relying on a long stack of short blades. For a given mass flow and pressure ratio at small scale, a centrifugal impeller can be sized with a much more favourable blade-height-to-clearance ratio than an equivalent axial stage would need, because it doesn't need many short stages to build the same pressure rise.</p>
+      <p>This is the reasoning that shaped the compressor selection on the small-scale turbojet project on this site: at a 65 mm rotor diameter targeting roughly 80 N thrust, an axial stage would have needed blade heights small enough that tip-clearance losses would have eaten a large share of the efficiency gain axial staging is supposed to offer in the first place. Comparing estimated clearance-to-span ratios for a plausible axial stage against the centrifugal alternative settled the choice before any CFD was run.</p>
+      <h2>Where the trade reverses again</h2>
+      <p>None of this is a permanent rule. It is a statement about where the crossover sits. As rotor diameter grows, manufacturing tolerances become a smaller fraction of blade height, multi-stage axial compression regains its efficiency and pressure-ratio-per-stage advantages, and most large gas turbines are axial for good reason. The practical takeaway for anyone designing at small scale is to run the clearance-ratio number early, before committing to an architecture on the strength of a textbook efficiency curve that assumes a size regime you're not actually in.</p>
+    </div>
+    <div class="btn-row" style="margin-top:40px;">
+      <a href="Insights.dc.html" class="btn">More insights</a>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Mushabbar.Noor</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor. Aerodynamics and multiphysics engineering: CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems. Based in Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="Research.dc.html">Research</a>
+          <a href="Projects.dc.html">Projects</a>
+            <a href="Insights.dc.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="Consultancy.dc.html">Consultancy</a>
+          <a href="Contact.dc.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · Mushabbar.Noor</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+
+</x-dc>
+</body>
+</html>

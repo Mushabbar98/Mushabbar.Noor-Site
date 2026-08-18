@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UAV Aerodynamics & Aeroelastic Flutter — Case Study</title>
+<meta name="description" content="CFD-driven aerodynamic optimization and fluid-structure interaction flutter analysis for UAV airframes at Baykar Technologies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="nav-brand"><span class="dot"></span>MHN.ENG</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="consultancy.html">Consultancy</a>
+        <a href="experience.html">Experience</a>
+        <a href="insights.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="contact.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="index.html">Home</a> / <a href="projects.html">Projects</a> / UAV Aerodynamics &amp; FSI</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Industrial project · Baykar Technologies</div>
+    <h1>UAV Aerodynamics &amp; Aeroelastic Flutter Analysis</h1>
+    <p class="lede" style="max-width:62ch;margin-top:16px;">CFD-driven aerodynamic optimization, VN-diagram flight-envelope definition, and fluid-structure interaction (FSI) flutter analysis for unmanned aerial vehicle airframes and propeller engines.</p>
+  </div>
+  <div class="wrap">
+    <div class="titleblock reveal in">
+      <div class="cell"><div class="k">Client</div><div class="v">Baykar Technologies</div></div>
+      <div class="cell"><div class="k">Role</div><div class="v">Aerodynamics Engineer</div></div>
+      <div class="cell"><div class="k">Duration</div><div class="v">Feb 2024 – present</div></div>
+      <div class="cell"><div class="k">Tools</div><div class="v">Fluent · Mechanical · ICEM</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section" style="padding-top:56px;">
+    <div class="prose reveal in">
+      <h2>Problem</h2>
+      <p>UAV airframes and their propeller engines need aerodynamic performance and structural safety margins established before flight test — bad assumptions at this stage are expensive and, on a loitering munition platform, safety-critical. Static and dynamic stability, flutter boundaries, and G-load structural limits all have to be defined and then re-validated whenever a design changes.</p>
+      <h2>Approach</h2>
+      <p>I run CFD analysis on the UAV airframe and propeller engines to optimize aerodynamic efficiency, evaluating static and dynamic stability parameters that determine flight control response. In parallel, I conduct fluid-structure interaction (2-way coupled Fluent + Mechanical, visualized in CFD-Post) to identify flutter boundaries and set structural limits, and lead G-load structural assessments whenever a design modification is proposed. Modal analysis on the airframe identifies natural frequencies so resonance risk can be designed out early rather than discovered in test. Aerodynamic parameters feed directly into hardware-in-the-loop (HILS) development, and the flight envelope is formalized as a VN-diagram defining safe operating limits by load factor and airspeed.</p>
+      <h2>Validation</h2>
+      <p>Computational predictions are cross-checked against structural ground testing of the aerostructures, closing the loop between simulation and physical hardware before any result is signed off.</p>
+    </div>
+
+    <div class="figure-pair reveal" style="margin-top:40px;">
+      <figure class="figure">
+        <img src="assets/img/render-mesh.webp" alt="Fine unstructured surface mesh over a UAV nose and fuselage section">
+        <figcaption>Surface mesh detail on a UAV fuselage leading section — mesh density controlled around high-curvature regions for accurate boundary-layer resolution.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/img/render-turbojet.webp" alt="CFD velocity contour on a propeller/rotor blade row">
+        <figcaption>Contour visualization style used across propeller-engine CFD post-processing for this programme.</figcaption>
+      </figure>
+    </div>
+
+    <div class="metrics reveal" style="margin-top:40px;">
+      <div class="m"><div class="v">2-way</div><div class="l">coupled FSI (Fluent + Mechanical)</div></div>
+      <div class="m"><div class="v">VN</div><div class="l">diagrams defining flight envelope</div></div>
+      <div class="m"><div class="v">Modal</div><div class="l">analysis for resonance mitigation</div></div>
+      <div class="m"><div class="v">HILS</div><div class="l">aerodynamic parameter support</div></div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:40px;">
+      <p>Outcome: a certified aerodynamics workflow — from CFD-based optimization through flutter-boundary FSI to structural ground-test validation — supporting Baykar's certified UAV development programme, including loiter munition platforms.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet tint">
+  <div class="wrap section" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div><div class="eyebrow">Next case study</div><h2 style="font-size:1.4rem;margin:0;">80 N Small-Scale Turbojet</h2></div>
+    <a href="project-turbojet.html" class="btn primary">View project →</a>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">MHN.ENG</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor — Aerodynamics &amp; Multiphysics Engineer. CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems, from Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="research.html">Research</a>
+          <a href="projects.html">Projects</a>
+          <a href="experience.html">Experience</a>
+          <a href="insights.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="consultancy.html">Consultancy</a>
+          <a href="contact.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · MHN.ENG</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>

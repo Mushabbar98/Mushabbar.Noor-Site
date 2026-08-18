@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</helmet>
+  <header class="nav">
+    <div class="wrap">
+      <a href="Home.dc.html" class="nav-brand"><span class="dot"></span>Mushabbar.Noor</a>
+      <nav class="nav-links">
+        <a href="Home.dc.html">Home</a>
+        <a href="About.dc.html">About</a>
+        <a href="Research.dc.html">Research</a>
+        <a href="Projects.dc.html" class="active">Projects</a>
+        <a href="Consultancy.dc.html">Consultancy</a>
+        <a href="Insights.dc.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="Contact.dc.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+
+<div class="wrap breadcrumb"><a href="Home.dc.html">Home</a> / <a href="Projects.dc.html">Projects</a> / AEROFLUX II</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Research · AEROFLUX II · AeroFlux Lab, Air University</div>
+    <h1>Avionics Thermal Qualification in an Unconditioned Dorsal Bay</h1>
+    <p class="lede" style="max-width:62ch;margin-top:16px;">Thermal qualification of high-flux electronics mounted in the unconditioned dorsal area of a high-performance airborne platform, resolved with a response-surface model validated against chamber testing.</p>
+  </div>
+  <div class="wrap">
+    <div class="titleblock">
+      <div class="cell"><div class="k">Standard</div><div class="v">MIL-E-5400</div></div>
+      <div class="cell"><div class="k">Bay type</div><div class="v">Unconditioned dorsal area</div></div>
+      <div class="cell"><div class="k">Duty cycle</div><div class="v">30% and 100%</div></div>
+      <div class="cell"><div class="k">Tools</div><div class="v">Fluent · Design Xplorer · MATLAB</div></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="case-stats">
+      <div class="m"><div class="v">75°C / 45°C</div><div class="l">surface temp at 100% / 30% duty cycle</div></div>
+      <div class="m"><div class="v">&lt;5% error</div><div class="l">vs environmental chamber testing</div></div>
+      <div class="m"><div class="v">Genetic Aggregation</div><div class="l">response-surface methodology</div></div>
+      <div class="m"><div class="v">Full envelope</div><div class="l">coverage without a full CFD sweep</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section" style="padding-top:56px;">
+    <div class="case-row">
+      <div class="tag">Challenge</div>
+      <div>
+        <h2>Challenge</h2>
+        <p>Electronics cooling inside unconditioned bays depends strongly on the heat-transfer characteristics of atmospheric air. As altitude increases, air density drops, which reduces convective heat-transfer capability, so electronics relying on natural or forced convection see higher component temperatures at altitude. A cooling fan drives forced convection inside the casing, and heat then moves from the casing surface to the aircraft's outer skin by natural convection and radiation.</p>
+        <div class="figure-pair" style="margin-top:28px;">
+          <figure class="figure">
+            <img src="assets/img/aeroflux2-dorsal-cad.png" alt="CAD geometry of the dorsal-area electronics housing with cooling fans and exhaust mesh">
+            <figcaption>Dorsal-area housing: SDR bulk models, cooling fans and exhaust mesh.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/img/aeroflux2-thermal-resistance-diagram.png" alt="Thermal resistance network diagram for the dorsal bay heat-transfer analogy">
+            <figcaption>Thermal-resistance analogy: conduction, natural convection and radiation paths to ambient.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="case-row">
+      <div class="tag">Method</div>
+      <div>
+        <h2>CFD across the flight envelope</h2>
+        <p>Thermofluid analysis was run at different altitudes, with ambient conditions defined by the International Standard Atmosphere (ISA) and by sponsor-specified design points, evaluating electronics temperature at 100% and 30% duty cycle. A hybrid mesh was used: structured mesh in the dorsal casing and electronics-casing domains, unstructured mesh in the cooling-fan zone. At 100% duty cycle the casing surface temperature rose to 75°C, and to 45°C at 30% duty cycle; low- and high-velocity streamlines showed the natural- and forced-convection zones inside the casing respectively. Results were compared against MIL-E-5400 limits throughout.</p>
+        <div class="figure-pair" style="margin-top:28px;">
+          <figure class="figure">
+            <img src="assets/img/aeroflux2-hybrid-mesh.png" alt="Hybrid structured/unstructured mesh of the dorsal casing and cooling fans">
+            <figcaption>Hybrid mesh: structured in the casing domain, unstructured around the cooling fans.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/img/aeroflux2-streamline-circulation.png" alt="Velocity streamlines showing natural and forced convection circulation inside the dorsal casing">
+            <figcaption>Streamlines showing the natural- and forced-convection circulation zones inside the casing.</figcaption>
+          </figure>
+        </div>
+        <div class="figure" style="margin-top:22px;">
+          <img src="assets/img/aeroflux2-ts-altitude-chart.jpg" alt="Surface temperature vs altitude at 30% and 100% duty cycle compared with ambient temperature">
+          <figcaption>Surface temperature vs altitude at 30% and 100% duty cycle, against ambient (Tatm).</figcaption>
+        </div>
+      </div>
+    </div>
+    <div class="case-row">
+      <div class="tag">Validation</div>
+      <div>
+        <h2>Response surface and chamber testing</h2>
+        <p>CFD results across the sampled altitudes were used to generate a response surface via Genetic Aggregation methodology, approximating the electronics-casing results for the complete flight envelope without re-running CFD at every point. In parallel, the electronics system was thermally tested in an Environmental Stress Screening (ESS) chamber at conditions replicating the actual ambient characteristics at variable flight altitude. The CFD and response-surface predictions showed good conformance with the chamber results, within 5% error, confirming the electronics system compliant with airworthiness standards.</p>
+        <div class="figure-pair" style="margin-top:28px;">
+          <figure class="figure">
+            <img src="assets/img/aeroflux2-ess-chamber.png" alt="Environmental Stress Screening chamber used for thermal validation testing">
+            <figcaption>Environmental Stress Screening (ESS) chamber used to replicate flight thermal conditions.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/img/aeroflux2-experimental-validation-chart.png" alt="Experimental time-variation chart from the ESS chamber test compared to alarm limits">
+            <figcaption>Experimental chamber data: exhaust-side and top-surface temperature over the test cycle.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="outcome-card" style="margin-top:36px;">
+      <span class="tag">Outcome</span>
+      <p>A validated response-surface thermal model of the dorsal bay, agreeing with environmental-chamber testing within 5% error and confirming compliance with MIL-E-5400 across the full flight envelope, sponsored by SPRC, Government of Pakistan.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet tint">
+  <div class="wrap section" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div><div class="eyebrow">Next case study</div><h2 style="font-size:1.4rem;margin:0;">Scramjet Combustion Analysis</h2></div>
+    <a href="Project-Scramjet.dc.html" class="btn primary">View project</a>
+  </div>
+</section>
+
+  <div id="lightbox"><img alt=""></div>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Mushabbar.Noor</div>
+          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor. Aerodynamics and multiphysics engineering: CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems. Based in Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="Research.dc.html">Research</a>
+          <a href="Projects.dc.html">Projects</a>
+          <a href="Insights.dc.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="Consultancy.dc.html">Consultancy</a>
+          <a href="Contact.dc.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · Mushabbar.Noor</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+
+</x-dc>
+</body>
+</html>
