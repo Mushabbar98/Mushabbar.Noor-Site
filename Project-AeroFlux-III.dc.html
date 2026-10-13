@@ -1,146 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+
+<title>AEROFLUX III: Controlled Bay — Mushabbar Husnain Noor</title>
+<meta name="description" content="Thermal qualification of high-flux avionics in a bleed-air-cooled controlled bay, validated to MIL-E-5400 from 30,000 to 50,000 ft.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-<script src="assets/site.js"></script>
-</helmet>
-  <header class="nav">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/mhn.css">
+<script src="assets/case.js"></script>
+
+</head>
+<body>
+
+
+  <header class="mx-nav">
     <div class="wrap">
-      <a href="Home.dc.html" class="nav-brand"><span class="dot"></span>Mushabbar.Noor</a>
-      <nav class="nav-links">
+      <a href="Home.dc.html" class="mx-nav__brand">Mushabbar.Noor</a>
+      <nav class="mx-nav__links" aria-label="Main">
         <a href="Home.dc.html">Home</a>
         <a href="About.dc.html">About</a>
         <a href="Research.dc.html">Research</a>
-        <a href="Projects.dc.html" class="active">Projects</a>
+        <a href="Projects.dc.html" aria-current="page">Projects</a>
+        <a href="Gallery.dc.html">Gallery</a>
         <a href="Consultancy.dc.html">Consultancy</a>
         <a href="Insights.dc.html">Insights</a>
       </nav>
-      <div style="display:flex;align-items:center;gap:14px;">
-        <a href="Contact.dc.html" class="nav-cta">Start a project</a>
-        <button class="nav-toggle">Menu</button>
+      <div class="mx-nav__right">
+        <a href="Contact.dc.html" class="mx-btn mx-btn--primary mx-btn--sm">Start a project</a>
+        <button class="mx-btn mx-btn--sm mx-nav__toggle" aria-expanded="false">Menu</button>
       </div>
     </div>
   </header>
-
-<div class="wrap breadcrumb"><a href="Home.dc.html">Home</a> / <a href="Projects.dc.html">Projects</a> / AEROFLUX III</div>
-<section class="sheet">
-  <div class="wrap pagehead">
-    <div class="kicker">Research · AEROFLUX III · AeroFlux Lab, Air University</div>
-    <h1>Avionics Thermal Qualification in a Controlled Bay</h1>
-    <p class="lede" style="max-width:62ch;margin-top:16px;">Thermal management of high-flux electronics in a constrained, controlled section of a high-performance airborne platform, cooled by engine bleed air and qualified against MIL-E-5400.</p>
-  </div>
-  <div class="wrap">
-    <div class="titleblock">
-      <div class="cell"><div class="k">Standard</div><div class="v">MIL-E-5400</div></div>
-      <div class="cell"><div class="k">Bay type</div><div class="v">Controlled / closed section</div></div>
-      <div class="cell"><div class="k">Altitude range</div><div class="v">30,000 to 50,000 ft</div></div>
-      <div class="cell"><div class="k">Tools</div><div class="v">Fluent · MATLAB · SolidWorks · SpaceClaim</div></div>
+<main>
+<div class="wrap">
+  <div class="mx-crumb"><a href="Home.dc.html">Home</a> / <a href="Projects.dc.html">Projects</a> / AEROFLUX III</div>
+  <section class="mx-case-hero">
+    <div>
+      <div class="mx-kicker">Research · AEROFLUX III · AeroFlux Lab, Air University</div>
+      <h1>Avionics Thermal Qualification in a Controlled Bay</h1>
     </div>
-  </div>
-  <div class="wrap">
-    <div class="case-stats">
-      <div class="m"><div class="v">302 / 314 / 330 K</div><div class="l">max temperature at 30k / 40k / 50k ft</div></div>
-      <div class="m"><div class="v">2,500 s</div><div class="l">to thermal equilibrium at 50,000 ft</div></div>
-      <div class="m"><div class="v">1% bleed</div><div class="l">identified as the most critical setting</div></div>
-      <div class="m"><div class="v">Full compliance</div><div class="l">confirmed against MIL-E-5400</div></div>
+    <div>
+      <p class="mx-lede">Thermal management of high-flux electronics in a constrained, controlled section of a high-performance airborne platform, cooled by engine bleed air and qualified against MIL-E-5400.</p>
+      <div class="mx-tags"><span class="mx-tag">Aerothermal</span><span class="mx-tag">MIL-STD</span><span class="mx-tag">CFD</span><span class="mx-tag">Conjugate heat transfer</span></div>
     </div>
+  </section>
+  <div class="mx-hero-fig">
+    <figure class="mx-figure">
+          <div class="mx-figure__frame mx-figure__frame--plate" tabindex="0" role="button" aria-label="Enlarge figure 01"><img src="assets/img/case/af3-housing-cad.webp" alt="CAD geometry of the electronics housing showing comm cards, cold inlet and hot outlet" loading="lazy"><span class="mx-figure__zoom">Enlarge ⤢</span></div>
+          <figcaption><b>FIG. 01</b><span>Electronics housing geometry: comm-card stack, cold-air inlet and hot-air outlet.</span></figcaption>
+        </figure>
   </div>
-</section>
+  <div class="mx-spec"><div class="mx-spec__cell"><div class="mx-spec__k">Standard</div><div class="mx-spec__v">MIL-E-5400</div></div><div class="mx-spec__cell"><div class="mx-spec__k">Bay type</div><div class="mx-spec__v">Controlled / closed section</div></div><div class="mx-spec__cell"><div class="mx-spec__k">Altitude range</div><div class="mx-spec__v">30,000 to 50,000 ft</div></div><div class="mx-spec__cell"><div class="mx-spec__k">Tools</div><div class="mx-spec__v">Fluent · MATLAB · SolidWorks · SpaceClaim</div></div></div>
+  <div class="mx-metrics"><div class="mx-metric"><div class="mx-metric__v"><em>330 K</em></div><div class="mx-metric__l">max temperature at 50,000 ft (302 K at 30k, 314 K at 40k)</div></div><div class="mx-metric"><div class="mx-metric__v">2,500 s</div><div class="mx-metric__l">to thermal equilibrium at 50,000 ft</div></div><div class="mx-metric"><div class="mx-metric__v">1% bleed</div><div class="mx-metric__l">identified as the most critical setting</div></div><div class="mx-metric"><div class="mx-metric__v">Full compliance</div><div class="mx-metric__l">confirmed against MIL-E-5400</div></div></div>
 
-<section class="sheet">
-  <div class="wrap section" style="padding-top:56px;">
-    <div class="case-row">
-      <div class="tag">Challenge</div>
-      <div>
-        <h2>Challenge</h2>
-        <p>Thermal management of high-flux electronics in a constrained airborne environment, installed on a high-performance airborne platform. The system sits in a closed section where multiple heat-transfer modes act at once: engine bleed air drives forced convection, while radiation exchanges heat between the electronics package surface and the outer aircraft enclosure surface.</p>
-        <div class="figure-pair" style="margin-top:28px;">
-          <figure class="figure">
-            <img src="assets/img/aeroflux3-bleed-section-diagram.png" alt="Aircraft nose section showing the conditioned bay area and engine bleed routing to the avionics compartment">
-            <figcaption>Conditioned bay area and 7th-stage engine bleed routing into the avionics compartment.</figcaption>
-          </figure>
-          <figure class="figure">
-            <img src="assets/img/aeroflux3-electronics-housing-cad.png" alt="CAD geometry of the electronics housing showing comm cards, cold inlet and hot outlet">
-            <figcaption>Electronics housing geometry: comm-card stack, cold-air inlet and hot-air outlet.</figcaption>
-          </figure>
-        </div>
+  <section class="mx-section" aria-labelledby="s1">
+    <div class="mx-eyebrow"><span class="mx-idx">01</span>Challenge</div>
+    <div class="mx-text"><h2 id="s1">The challenge</h2><div><p>Thermal management of high-flux electronics in a constrained airborne environment, installed on a high-performance airborne platform. The system sits in a closed section where multiple heat-transfer modes act at once: engine bleed air drives forced convection, while radiation exchanges heat between the electronics package surface and the outer aircraft enclosure surface.</p></div></div>
+    
+  </section>
+  <section class="mx-section" aria-labelledby="s2">
+    <div class="mx-eyebrow"><span class="mx-idx">02</span>Solution</div>
+    <div class="mx-text"><h2 id="s2">Bleed-air forced convection</h2><div><p>Because the system sits in a closed section, 7th-stage bleed air from the aircraft engine is routed in to provide forced-convection cooling for the high-flux electronics package, modeled as a combined conjugate heat-transfer problem across the enclosure.</p></div></div>
+    
+  </section>
+  <section class="mx-section" aria-labelledby="s3">
+    <div class="mx-eyebrow"><span class="mx-idx">03</span>Results</div>
+    <div class="mx-text"><h2 id="s3">CFD results</h2><div><p>CFD was run at the operating extremes: maximum temperature reached 302 K, 314 K and 330 K at 30,000, 40,000 and 50,000 ft respectively, rising with altitude. The transient plot shows the surface reaching thermal equilibrium at 50,000 ft after 2,500 s (41.6 min) of continuous operation.</p><p>The analysis confirmed full MIL-E-5400 compliance for the electronics cooling system under extreme operational loads, with the most critical condition identified as slow-speed, high-altitude flight at 1% engine bleed.</p></div></div>
+    <div class="mx-compare">
+        <div class="mx-compare__bar"><span class="mx-compare__label">Temperature contour · select altitude</span><div class="mx-seg" role="tablist"><button role="tab" data-show="30k" aria-selected="true">30,000 ft</button><button role="tab" data-show="40k" aria-selected="false">40,000 ft</button><button role="tab" data-show="50k" aria-selected="false">50,000 ft</button></div></div>
+        <figure class="mx-figure" data-id="30k">
+          <div class="mx-figure__frame mx-figure__frame--plate" tabindex="0" role="button" aria-label="Enlarge figure 02"><img src="assets/img/case/af3-contour-30kft.webp" alt="Temperature contour of the electronics housing at 30,000 ft, max 302 K" loading="lazy"><span class="mx-figure__zoom">Enlarge ⤢</span></div>
+          <figcaption><b>FIG. 02</b><span>Temperature contour at 30,000 ft — max 302 K.</span></figcaption>
+        </figure>
+        <figure class="mx-figure is-hidden" data-id="40k">
+          <div class="mx-figure__frame mx-figure__frame--plate" tabindex="0" role="button" aria-label="Enlarge figure 03"><img src="assets/img/case/af3-contour-40kft.webp" alt="Temperature contour of the electronics housing at 40,000 ft, max 314 K" loading="lazy"><span class="mx-figure__zoom">Enlarge ⤢</span></div>
+          <figcaption><b>FIG. 03</b><span>Temperature contour at 40,000 ft — max 314 K.</span></figcaption>
+        </figure>
+        <figure class="mx-figure is-hidden" data-id="50k">
+          <div class="mx-figure__frame mx-figure__frame--plate" tabindex="0" role="button" aria-label="Enlarge figure 04"><img src="assets/img/case/af3-contour-50kft.webp" alt="Temperature contour of the electronics housing at 50,000 ft, max 330 K" loading="lazy"><span class="mx-figure__zoom">Enlarge ⤢</span></div>
+          <figcaption><b>FIG. 04</b><span>Temperature contour at 50,000 ft — max 330 K, the critical altitude.</span></figcaption>
+        </figure>
+        <div class="mx-compare__strip"><button data-show="30k" aria-selected="true" aria-label="Show 30,000 ft" style="background:var(--plate)"><img src="assets/img/case/af3-contour-30kft.webp" alt=""></button><button data-show="40k" aria-selected="false" aria-label="Show 40,000 ft" style="background:var(--plate)"><img src="assets/img/case/af3-contour-40kft.webp" alt=""></button><button data-show="50k" aria-selected="false" aria-label="Show 50,000 ft" style="background:var(--plate)"><img src="assets/img/case/af3-contour-50kft.webp" alt=""></button></div>
       </div>
+    <div class="mx-figs mx-figs--2">
+        <figure class="mx-figure">
+          <div class="mx-figure__frame mx-figure__frame--plate" tabindex="0" role="button" aria-label="Enlarge figure 05"><img src="assets/img/case/af3-transient-50kft.webp" alt="Transient temperature plot approaching thermal equilibrium over 2,500 seconds" loading="lazy"><span class="mx-figure__zoom">Enlarge ⤢</span></div>
+          <figcaption><b>FIG. 05</b><span>Transient response at 50,000 ft: surface temperature reaches equilibrium after ~2,500 s.</span></figcaption>
+        </figure>
+        <figure class="mx-figure">
+          <div class="mx-figure__frame mx-figure__frame--plate" tabindex="0" role="button" aria-label="Enlarge figure 06"><img src="assets/img/case/af3-bleed-comparison.webp" alt="Chart comparing thermal severity across engine bleed settings and altitude at Mach 0.6" loading="lazy"><span class="mx-figure__zoom">Enlarge ⤢</span></div>
+          <figcaption><b>FIG. 06</b><span>Engine-bleed comparison at Mach 0.6: 1% bleed is the critical case at every altitude.</span></figcaption>
+        </figure>
     </div>
-    <div class="case-row">
-      <div class="tag">Solution</div>
-      <div>
-        <h2>Solution</h2>
-        <p>Because the system sits in a closed section, 7th-stage bleed air from the aircraft engine is routed in to provide forced-convection cooling for the high-flux electronics package, modeled as a combined conjugate heat-transfer problem across the enclosure.</p>
-      </div>
+  </section>
+  <section class="mx-outcome" aria-label="Outcome">
+    <div class="mx-eyebrow" style="margin:0;"><span class="mx-idx">→</span>Outcome</div>
+    <div><p>A controlled-bay thermal model qualified to MIL-E-5400 across the full altitude envelope, with the critical operating point identified and used to set design margins.</p><span class="mx-fine">Sponsored by SPRC, Government of Pakistan · Grant# C02SDM5N-00SAT-0TSO1234-220605</span></div>
+  </section>
+  <a class="mx-next" href="Project-AeroFlux-II.dc.html">
+    <div class="mx-next__body">
+      <div><div class="mx-kicker" style="margin:0;">Next case study · AEROFLUX II</div><div class="mx-next__title">Avionics Thermal Qualification in an Unconditioned Dorsal Bay</div></div>
+      <span class="mx-btn mx-btn--primary" style="align-self:flex-start;">View project <span class="mx-arrow">→</span></span>
     </div>
-    <div class="case-row">
-      <div class="tag">Results</div>
-      <div>
-        <h2>CFD results</h2>
-        <p>CFD was run at the operating extremes: maximum temperature reached 302 K, 314 K and 330 K at 30,000, 40,000 and 50,000 ft respectively, rising with altitude. The transient plot shows the surface reaching thermal equilibrium at 50,000 ft after 2,500 s (41.6 min) of continuous operation. The analysis confirmed full MIL-E-5400 compliance for the electronics cooling system under extreme operational loads, with the most critical condition identified as slow-speed, high-altitude flight at 1% engine bleed.</p>
-        <div class="figure-trio" style="margin-top:28px;">
-          <figure class="figure">
-            <img src="assets/img/aeroflux3-contour-30kft.png" alt="Temperature contour at 30,000 ft, max 302 K">
-            <figcaption>30,000 ft, max 302 K</figcaption>
-          </figure>
-          <figure class="figure">
-            <img src="assets/img/aeroflux3-contour-40kft.png" alt="Temperature contour at 40,000 ft, max 314 K">
-            <figcaption>40,000 ft, max 314 K</figcaption>
-          </figure>
-          <figure class="figure">
-            <img src="assets/img/aeroflux3-contour-50kft.png" alt="Temperature contour at 50,000 ft, max 330 K">
-            <figcaption>50,000 ft, max 330 K</figcaption>
-          </figure>
-        </div>
-        <div class="figure-pair" style="margin-top:22px;">
-          <figure class="figure">
-            <img src="assets/img/aeroflux3-transient-plot.png" alt="Transient temperature plot approaching thermal equilibrium over 2500 seconds">
-            <figcaption>Transient response at 50,000 ft: surface temperature reaches equilibrium after ~2,500 s.</figcaption>
-          </figure>
-          <figure class="figure">
-            <img src="assets/img/aeroflux3-bleed-comparison-chart.png" alt="Chart comparing thermal severity across engine bleed settings and altitude at Mach 0.6">
-            <figcaption>Engine-bleed comparison at Mach 0.6: 1% bleed is the critical case at every altitude.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-
-    <div class="outcome-card" style="margin-top:36px;">
-      <span class="tag">Outcome</span>
-      <p>A controlled-bay thermal model qualified to MIL-E-5400 across the full altitude envelope, sponsored by SPRC, Government of Pakistan (Grant# C02SDM5N-00SAT-0TSO1234-220605), with the critical operating point identified and used to set design margins.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sheet tint">
-  <div class="wrap section" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
-    <div><div class="eyebrow">Next case study</div><h2 style="font-size:1.4rem;margin:0;">AEROFLUX II: Unconditioned Dorsal Bay</h2></div>
-    <a href="Project-AeroFlux-II.dc.html" class="btn primary">View project</a>
-  </div>
-</section>
-
-  <div id="lightbox"><img alt=""></div>
-  <footer class="footer">
+    <div class="mx-next__media"><img src="assets/img/case/af2-casing-temperature.webp" alt="" loading="lazy"></div>
+  </a>
+</div>
+</main>
+  <footer class="mx-footer">
     <div class="wrap">
-      <div class="footer-grid">
+      <div class="mx-footer__grid">
         <div>
-          <div class="footer-brand">Mushabbar.Noor</div>
-          <p style="color:#8FA0A5;font-size:.88rem;max-width:34ch;">Mushabbar Husnain Noor. Aerodynamics and multiphysics engineering: CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems. Based in Rawalpindi, Pakistan.</p>
+          <div class="mx-footer__brand">Mushabbar.Noor</div>
+          <p>Mushabbar Husnain Noor. Aerodynamics and multiphysics engineering: CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems. Based in Rawalpindi, Pakistan.</p>
         </div>
         <div>
           <h5>Explore</h5>
           <a href="Research.dc.html">Research</a>
           <a href="Projects.dc.html">Projects</a>
+          <a href="Gallery.dc.html">Gallery</a>
           <a href="Insights.dc.html">Insights</a>
         </div>
         <div>
@@ -156,13 +136,13 @@
           <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="mx-footer__bottom">
         <span>&copy; 2026 Mushabbar Husnain Noor · Mushabbar.Noor</span>
         <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
       </div>
     </div>
   </footer>
 
-</x-dc>
+
 </body>
 </html>

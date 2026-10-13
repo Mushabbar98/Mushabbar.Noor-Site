@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mushabbar Husnain Noor</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+<script src="assets/gallery.js"></script>
+
+</head>
+<body>
+
+
+  <header class="nav">
+    <div class="wrap">
+      <a href="Home.dc.html" class="nav-brand"><span class="dot"></span>Mushabbar.Noor</a>
+      <nav class="nav-links">
+        <a href="Home.dc.html">Home</a>
+        <a href="About.dc.html">About</a>
+        <a href="Research.dc.html">Research</a>
+        <a href="Projects.dc.html">Projects</a>
+        <a href="Gallery.dc.html" class="active">Gallery</a>
+        <a href="Consultancy.dc.html">Consultancy</a>
+        <a href="Insights.dc.html">Insights</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="Contact.dc.html" class="nav-cta">Start a project</a>
+        <button class="nav-toggle">Menu</button>
+      </div>
+    </div>
+  </header>
+  
+<div class="wrap breadcrumb"><a href="Home.dc.html">Home</a> / Gallery</div>
+<section class="sheet">
+  <div class="wrap pagehead">
+    <div class="kicker">Simulation gallery</div>
+    <h1>Flow fields, temperature maps and meshes, straight from the solver.</h1>
+    <p class="lede" style="max-width:60ch;margin-top:16px;">Selected results from aerothermal, hypersonic and turbomachinery work. Click any frame to view it full-screen; transient animations play in place.</p>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap section" style="padding-top:0;">
+    <div class="g-bar">
+      <div class="g-filters" role="tablist" aria-label="Filter gallery">
+        <button data-filter="all" aria-selected="true">All</button>
+        <button data-filter="animation" aria-selected="false">Animations</button>
+        <button data-filter="aerothermal" aria-selected="false">Aerothermal</button>
+        <button data-filter="hypersonics" aria-selected="false">Hypersonics</button>
+        <button data-filter="turbomachinery" aria-selected="false">Turbomachinery</button>
+        <button data-filter="mesh" aria-selected="false">Meshes</button>
+      </div>
+      <span class="g-count"></span>
+    </div>
+
+    <div class="g-grid">
+<!--
+  ADD AN ANIMATION: copy this block, put your file in assets/video/, and set the paths.
+  MP4 (H.264) or WebM, muted, ideally 5–20 s and under ~8 MB. The poster is a still shown before it loads.
+  Add "wide" to the class for a landscape animation that should span two columns.
+
+      <figure class="g-item g-wide" data-cat="animation aerothermal">
+        <button class="g-media g-well" aria-label="Open transient warm-up animation">
+          <video src="assets/video/af3-transient.mp4" poster="assets/img/case/af3-contour-50kft.webp" muted loop playsinline preload="metadata"></video>
+          <span class="g-badge">Transient · 12 s</span>
+        </button>
+        <figcaption><div class="g-meta"><span>Ansys Fluent · transient CHT</span><a class="g-link" href="Project-AeroFlux-III.dc.html">Case study →</a></div><div class="g-title">Housing warm-up at 50,000 ft</div></figcaption>
+      </figure>
+-->
+      <figure class="g-item g-wide" data-cat="hypersonics">
+        <button class="g-media g-plate" aria-label="Open Scramjet Mach field"><img src="assets/img/case/sj-mach.webp" alt="Mach-number contour across the complete scramjet engine: inlet shock train, combustion zone and exhaust plume." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Ansys Fluent · Ma contour</span><a class="g-link" href="Project-Scramjet.dc.html">Case study →</a></div><div class="g-title">Scramjet Mach field</div></figcaption>
+      </figure>
+      <figure class="g-item" data-cat="animation aerothermal">
+        <button class="g-media g-well" aria-label="Open Altitude sweep, 30k → 50k ft"><video src="assets/video/af3-altitude-sweep.mp4" poster="assets/img/case/af3-contour-30kft.webp" muted loop playsinline preload="metadata" aria-label="Electronics housing temperature stepping from 30,000 to 50,000 ft: 302, 314 and 330 K peak."></video><span class="g-badge">Animation · 7 s</span></button>
+        <figcaption><div class="g-meta"><span>Ansys Fluent · CHT · 3 runs</span><a class="g-link" href="Project-AeroFlux-III.dc.html">Case study →</a></div><div class="g-title">Altitude sweep, 30k → 50k ft</div></figcaption>
+      </figure>
+      <figure class="g-item" data-cat="aerothermal">
+        <button class="g-media g-plate" aria-label="Open Electronics housing at 50,000 ft"><img src="assets/img/case/af3-contour-50kft.webp" alt="Temperature contour of the bleed-air-cooled electronics housing at the critical altitude." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Ansys Fluent · CHT · 330 K max</span><a class="g-link" href="Project-AeroFlux-III.dc.html">Case study →</a></div><div class="g-title">Electronics housing at 50,000 ft</div></figcaption>
+      </figure>
+      <figure class="g-item" data-cat="aerothermal">
+        <button class="g-media g-well" aria-label="Open Dorsal casing temperature + streamlines"><img src="assets/img/case/af2-casing-temperature.webp" alt="Temperature field with velocity streamlines through the casing and cooling fans." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Ansys Fluent · forced convection</span><a class="g-link" href="Project-AeroFlux-II.dc.html">Case study →</a></div><div class="g-title">Dorsal casing temperature + streamlines</div></figcaption>
+      </figure>
+      <figure class="g-item" data-cat="turbomachinery">
+        <button class="g-media g-well" aria-label="Open Compressor rotor blade row"><img src="assets/img/render-turbojet.webp" alt="Velocity contour on the compressor rotor blade row of the 80 N small-scale turbojet." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>CFX · velocity contour</span></div><div class="g-title">Compressor rotor blade row</div></figcaption>
+      </figure>
+      <figure class="g-item g-wide" data-cat="hypersonics">
+        <button class="g-media g-well" aria-label="Open O2 mass fraction · variable-area chamber"><img src="assets/img/case/sj-o2-chamber.webp" alt="Oxidiser distribution along the variable-area combustion chamber." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Ansys Fluent · species transport</span><a class="g-link" href="Project-Scramjet.dc.html">Case study →</a></div><div class="g-title">O2 mass fraction · variable-area chamber</div></figcaption>
+      </figure>
+      <figure class="g-item" data-cat="aerothermal">
+        <button class="g-media g-plate" aria-label="Open Electronics housing at 30,000 ft"><img src="assets/img/case/af3-contour-30kft.webp" alt="Temperature contour of the electronics housing at 30,000 ft." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Ansys Fluent · CHT · 302 K max</span><a class="g-link" href="Project-AeroFlux-III.dc.html">Case study →</a></div><div class="g-title">Electronics housing at 30,000 ft</div></figcaption>
+      </figure>
+      <figure class="g-item" data-cat="aerothermal">
+        <button class="g-media g-plate" aria-label="Open Electronics housing at 40,000 ft"><img src="assets/img/case/af3-contour-40kft.webp" alt="Temperature contour of the electronics housing at 40,000 ft." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Ansys Fluent · CHT · 314 K max</span><a class="g-link" href="Project-AeroFlux-III.dc.html">Case study →</a></div><div class="g-title">Electronics housing at 40,000 ft</div></figcaption>
+      </figure>
+      <figure class="g-item" data-cat="aerothermal">
+        <button class="g-media g-plate" aria-label="Open Casing circulation zones"><img src="assets/img/case/af2-streamlines.webp" alt="Natural- and forced-convection circulation zones inside the dorsal casing." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Ansys Fluent · velocity streamlines</span><a class="g-link" href="Project-AeroFlux-II.dc.html">Case study →</a></div><div class="g-title">Casing circulation zones</div></figcaption>
+      </figure>
+      <figure class="g-item g-wide" data-cat="hypersonics">
+        <button class="g-media g-well" aria-label="Open H2 mass fraction · constant-area chamber"><img src="assets/img/case/sj-h2-domain.webp" alt="The hydrogen fuel stream stays close to the wall in the constant-area chamber." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Ansys Fluent · species transport</span><a class="g-link" href="Project-Scramjet.dc.html">Case study →</a></div><div class="g-title">H2 mass fraction · constant-area chamber</div></figcaption>
+      </figure>
+      <figure class="g-item" data-cat="aerothermal">
+        <button class="g-media g-well" aria-label="Open Avionics LRU thermal field"><img src="assets/img/render-lru-thermal.webp" alt="Surface temperature on an avionics line-replaceable unit." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Ansys · temperature contour</span></div><div class="g-title">Avionics LRU thermal field</div></figcaption>
+      </figure>
+      <figure class="g-item" data-cat="mesh">
+        <button class="g-media g-well" aria-label="Open UAV nose surface mesh"><img src="assets/img/render-mesh.webp" alt="Surface mesh over a UAV nose and fuselage section, refined around high-curvature regions." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Unstructured surface mesh</span></div><div class="g-title">UAV nose surface mesh</div></figcaption>
+      </figure>
+      <figure class="g-item g-wide" data-cat="mesh">
+        <button class="g-media g-plate" aria-label="Open Dorsal bay hybrid mesh"><img src="assets/img/case/af2-hybrid-mesh.webp" alt="Structured mesh in the casing domain, unstructured around the cooling fans." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Structured + unstructured</span><a class="g-link" href="Project-AeroFlux-II.dc.html">Case study →</a></div><div class="g-title">Dorsal bay hybrid mesh</div></figcaption>
+      </figure>
+      <figure class="g-item" data-cat="aerothermal transient">
+        <button class="g-media g-plate" aria-label="Open Transient warm-up at 50,000 ft"><img src="assets/img/case/af3-transient-50kft.webp" alt="Surface temperature reaching thermal equilibrium after ~2,500 s of continuous operation." loading="lazy"></button>
+        <figcaption><div class="g-meta"><span>Transient · 2,500 s</span><a class="g-link" href="Project-AeroFlux-III.dc.html">Case study →</a></div><div class="g-title">Transient warm-up at 50,000 ft</div></figcaption>
+      </figure>
+    </div>
+    <p class="g-empty">Nothing in this category yet.</p>
+  </div>
+</section>
+
+<section class="sheet dark">
+  <div class="wrap contact-cta">
+    <div class="eyebrow">Need results like these?</div>
+    <h2>CFD, FSI and thermal analysis with the plots, animations and paper trail to back them up.</h2>
+    <div class="btn-row"><a href="Projects.dc.html" class="btn on-dark">Read the case studies</a><a href="Contact.dc.html" class="btn primary">Start a project</a></div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Mushabbar.Noor</div>
+          <p style="max-width:34ch;">Mushabbar Husnain Noor. Aerodynamics and multiphysics engineering: CFD, FSI, aerothermal and structural analysis for aerospace and industrial systems. Based in Rawalpindi, Pakistan.</p>
+        </div>
+        <div>
+          <h5>Explore</h5>
+          <a href="Research.dc.html">Research</a>
+          <a href="Projects.dc.html">Projects</a>
+            <a href="Gallery.dc.html">Gallery</a>
+            <a href="Insights.dc.html">Insights</a>
+        </div>
+        <div>
+          <h5>Work with me</h5>
+          <a href="Consultancy.dc.html">Consultancy</a>
+          <a href="Contact.dc.html">Start a project</a>
+          <a href="assets/docs/Mushabbar-Husnain-Noor-CV.pdf">Download CV</a>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <a href="mailto:mushabbarhn@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mushabbar Husnain Noor · Mushabbar.Noor</span>
+        <span>Rawalpindi, Pakistan · Available for remote &amp; on-site engagements</span>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>

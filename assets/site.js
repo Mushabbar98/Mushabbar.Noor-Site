@@ -15,13 +15,13 @@
       links.style.display = 'flex';
       links.style.flexDirection = 'column';
       links.style.position = 'absolute';
-      links.style.top = '64px';
+      links.style.top = '64px'; links.style.zIndex = '60';
       links.style.left = '0';
       links.style.right = '0';
-      links.style.background = '#F5F6F3';
-      links.style.padding = '20px 32px';
-      links.style.borderBottom = '1px solid #D7DBD4';
-      links.style.gap = '18px';
+      links.style.background = '#07090b';
+      links.style.padding = '24px 32px 32px';
+      links.style.borderBottom = '1px solid #1f252b';
+      links.style.gap = '20px';
     }
     toggle.textContent = open ? 'Menu' : 'Close';
   });
