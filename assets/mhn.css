@@ -38,7 +38,7 @@ p{ margin:0 0 1em; color:var(--ink-muted); }
 .mx-nav{ position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg-000) 86%, transparent); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line-100); }
 .mx-nav .wrap{ height:var(--nav-height); display:flex; align-items:center; justify-content:space-between; gap:var(--space-6); }
 .mx-nav__brand{ display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:600; font-size:16px; letter-spacing:-.01em; text-decoration:none; }
-.mx-nav__brand::before{ content:""; width:8px; height:8px; border-radius:var(--radius-pill); background:var(--accent); }
+.mx-nav__brand::before{ content:""; width:24px; height:24px; background:url("brand/mhn-mark-simple.svg") center/contain no-repeat; flex:none; }
 .mx-nav__links{ display:flex; gap:var(--space-6); }
 .mx-nav__links a{ font-family:var(--font-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-muted); text-decoration:none; padding:6px 0; border-bottom:1px solid transparent; transition:color .15s; }
 .mx-nav__links a:hover{ color:var(--ink); }
@@ -161,7 +161,7 @@ p{ margin:0 0 1em; color:var(--ink-muted); }
 .mx-footer{ border-top:1px solid var(--line-100); padding:var(--space-10) 0 var(--space-6); }
 .mx-footer__grid{ display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:var(--space-8); }
 .mx-footer__brand{ font-family:var(--font-display); font-weight:600; font-size:18px; display:flex; align-items:center; gap:10px; margin-bottom:var(--space-3); }
-.mx-footer__brand::before{ content:""; width:8px; height:8px; border-radius:var(--radius-pill); background:var(--accent); }
+.mx-footer__brand::before{ content:""; width:24px; height:24px; background:url("brand/mhn-mark-simple.svg") center/contain no-repeat; flex:none; }
 .mx-footer p{ font-size:14px; line-height:22px; max-width:36ch; }
 .mx-footer h5{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); font-weight:500; margin:0 0 var(--space-4); }
 .mx-footer__grid a{ display:block; font-size:14px; line-height:22px; color:var(--ink-muted); text-decoration:none; margin-bottom:var(--space-2); }

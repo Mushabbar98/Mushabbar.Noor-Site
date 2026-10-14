@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 64 64" fill="none" role="img" aria-label="MHN.ENG">
+  <g stroke="#0b0e10" stroke-width="0.75" opacity="0.28"><path d="M14 2 V62 M32 2 V62 M50 2 V62 M2 14 H62 M2 32 H62 M2 50 H62"/></g>
+  <path d="M14 50 V14 L32 32 L50 14 V50" stroke="#0b0e10" stroke-width="4" stroke-linejoin="bevel" stroke-linecap="square"/>
+  <circle cx="32" cy="32" r="5" fill="#c6f135" stroke="#0b0e10" stroke-width="1"/>
+</svg>
